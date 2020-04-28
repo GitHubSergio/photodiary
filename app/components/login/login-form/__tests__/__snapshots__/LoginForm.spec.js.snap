@@ -1,0 +1,480 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoginForm /> should display the Errors component 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <ScrollView>
+    <View>
+      <View
+        style={
+          Object {
+            "bottom": 0,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "testUri": "../../../app/assets/images/logo-resized.png",
+            }
+          }
+          style={
+            Object {
+              "alignSelf": "center",
+              "backgroundColor": "#2D2A4A",
+              "borderRadius": 100,
+              "marginBottom": 10,
+            }
+          }
+        />
+        <TextInput
+          allowFontScaling={true}
+          keyboardType="email-address"
+          placeholder="Email"
+          placeholderTextColor="grey"
+          rejectResponderTermination={true}
+          style={
+            Array [
+              Object {
+                "marginBottom": 10,
+                "padding": 5,
+              },
+              undefined,
+            ]
+          }
+          testID="email"
+          underlineColorAndroid="transparent"
+          value=""
+        />
+        <TextInput
+          allowFontScaling={true}
+          placeholder="Password"
+          placeholderTextColor="grey"
+          rejectResponderTermination={true}
+          secureTextEntry={true}
+          style={
+            Array [
+              Object {
+                "marginBottom": 10,
+                "padding": 5,
+              },
+              undefined,
+            ]
+          }
+          testID="password"
+          underlineColorAndroid="transparent"
+          value="password"
+        />
+        <TouchableOpacity
+          activeOpacity={0.2}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#2D2A4A",
+                "borderRadius": 10,
+                "height": 40,
+                "justifyContent": "center",
+              },
+              undefined,
+            ]
+          }
+        >
+          <Text
+            accessibilityLabel="submit-button"
+            style={
+              Array [
+                Object {
+                  "color": "#F4F5F8",
+                  "fontSize": 20,
+                  "fontWeight": "bold",
+                },
+                undefined,
+              ]
+            }
+          >
+            SUBMIT
+          </Text>
+        </TouchableOpacity>
+        <Button
+          title="Log In"
+        />
+        <View
+          style={
+            Object {
+              "padding": 10,
+            }
+          }
+        >
+          <Text
+            accessibilityLabel="error-msg"
+            style={
+              Object {
+                "color": "#A51931",
+              }
+            }
+          >
+            Email is required
+          </Text>
+        </View>
+      </View>
+    </View>
+  </ScrollView>
+</View>
+`;
+
+exports[`<LoginForm /> should render the LoginScreen component 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <ScrollView>
+    <View>
+      <View
+        style={
+          Object {
+            "bottom": 0,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "testUri": "../../../app/assets/images/logo-resized.png",
+            }
+          }
+          style={
+            Object {
+              "alignSelf": "center",
+              "backgroundColor": "#2D2A4A",
+              "borderRadius": 100,
+              "marginBottom": 10,
+            }
+          }
+        />
+        <TextInput
+          allowFontScaling={true}
+          keyboardType="email-address"
+          placeholder="Email"
+          placeholderTextColor="grey"
+          rejectResponderTermination={true}
+          style={
+            Array [
+              Object {
+                "marginBottom": 10,
+                "padding": 5,
+              },
+              undefined,
+            ]
+          }
+          testID="email"
+          underlineColorAndroid="transparent"
+          value=""
+        />
+        <TextInput
+          allowFontScaling={true}
+          placeholder="Password"
+          placeholderTextColor="grey"
+          rejectResponderTermination={true}
+          secureTextEntry={true}
+          style={
+            Array [
+              Object {
+                "marginBottom": 10,
+                "padding": 5,
+              },
+              undefined,
+            ]
+          }
+          testID="password"
+          underlineColorAndroid="transparent"
+          value=""
+        />
+        <TouchableOpacity
+          activeOpacity={0.2}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#2D2A4A",
+                "borderRadius": 10,
+                "height": 40,
+                "justifyContent": "center",
+              },
+              undefined,
+            ]
+          }
+        >
+          <Text
+            accessibilityLabel="submit-button"
+            style={
+              Array [
+                Object {
+                  "color": "#F4F5F8",
+                  "fontSize": 20,
+                  "fontWeight": "bold",
+                },
+                undefined,
+              ]
+            }
+          >
+            SUBMIT
+          </Text>
+        </TouchableOpacity>
+        <Button
+          title="Log In"
+        />
+      </View>
+    </View>
+  </ScrollView>
+</View>
+`;
+
+exports[`<LoginForm /> should render the Sign Up screen 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <ScrollView>
+    <View>
+      <View
+        style={
+          Object {
+            "bottom": 0,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "testUri": "../../../app/assets/images/logo-resized.png",
+            }
+          }
+          style={
+            Object {
+              "alignSelf": "center",
+              "backgroundColor": "#2D2A4A",
+              "borderRadius": 100,
+              "marginBottom": 10,
+            }
+          }
+        />
+        <TextInput
+          allowFontScaling={true}
+          placeholder="Username"
+          placeholderTextColor="grey"
+          rejectResponderTermination={true}
+          style={
+            Array [
+              Object {
+                "marginBottom": 10,
+                "padding": 5,
+              },
+              undefined,
+            ]
+          }
+          testID="username"
+          underlineColorAndroid="transparent"
+          value=""
+        />
+        <TextInput
+          allowFontScaling={true}
+          keyboardType="email-address"
+          placeholder="Email"
+          placeholderTextColor="grey"
+          rejectResponderTermination={true}
+          style={
+            Array [
+              Object {
+                "marginBottom": 10,
+                "padding": 5,
+              },
+              undefined,
+            ]
+          }
+          testID="email"
+          underlineColorAndroid="transparent"
+          value=""
+        />
+        <TextInput
+          allowFontScaling={true}
+          placeholder="Password"
+          placeholderTextColor="grey"
+          rejectResponderTermination={true}
+          secureTextEntry={true}
+          style={
+            Array [
+              Object {
+                "marginBottom": 10,
+                "padding": 5,
+              },
+              undefined,
+            ]
+          }
+          testID="password"
+          underlineColorAndroid="transparent"
+          value=""
+        />
+        <TextInput
+          allowFontScaling={true}
+          placeholder="Confirm Password"
+          placeholderTextColor="grey"
+          rejectResponderTermination={true}
+          secureTextEntry={true}
+          style={
+            Array [
+              Object {
+                "marginBottom": 10,
+                "padding": 5,
+              },
+              undefined,
+            ]
+          }
+          testID="confirm-password"
+          underlineColorAndroid="transparent"
+          value=""
+        />
+        <TouchableOpacity
+          activeOpacity={0.2}
+          style={
+            Array [
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#2D2A4A",
+                "borderRadius": 10,
+                "height": 40,
+                "justifyContent": "center",
+              },
+              undefined,
+            ]
+          }
+        >
+          <Text
+            accessibilityLabel="submit-button"
+            style={
+              Array [
+                Object {
+                  "color": "#F4F5F8",
+                  "fontSize": 20,
+                  "fontWeight": "bold",
+                },
+                undefined,
+              ]
+            }
+          >
+            SUBMIT
+          </Text>
+        </TouchableOpacity>
+        <Button
+          title="Log In"
+        />
+      </View>
+    </View>
+  </ScrollView>
+</View>
+`;
+
+exports[`<LoginForm /> should render the loader component when submitting the form 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <ScrollView>
+    <View>
+      <View
+        style={
+          Object {
+            "bottom": 0,
+          }
+        }
+      >
+        <Image
+          source={
+            Object {
+              "testUri": "../../../app/assets/images/logo-resized.png",
+            }
+          }
+          style={
+            Object {
+              "alignSelf": "center",
+              "backgroundColor": "#2D2A4A",
+              "borderRadius": 100,
+              "marginBottom": 10,
+            }
+          }
+        />
+        <TextInput
+          allowFontScaling={true}
+          keyboardType="email-address"
+          placeholder="Email"
+          placeholderTextColor="grey"
+          rejectResponderTermination={true}
+          style={
+            Array [
+              Object {
+                "marginBottom": 10,
+                "padding": 5,
+              },
+              undefined,
+            ]
+          }
+          testID="email"
+          underlineColorAndroid="transparent"
+          value="email@mail.com"
+        />
+        <TextInput
+          allowFontScaling={true}
+          placeholder="Password"
+          placeholderTextColor="grey"
+          rejectResponderTermination={true}
+          secureTextEntry={true}
+          style={
+            Array [
+              Object {
+                "marginBottom": 10,
+                "padding": 5,
+              },
+              undefined,
+            ]
+          }
+          testID="password"
+          underlineColorAndroid="transparent"
+          value="password"
+        />
+        <View
+          testID="loader"
+        >
+          <ActivityIndicator
+            animating={true}
+            color="#0000ff"
+            hidesWhenStopped={true}
+            size="large"
+          />
+        </View>
+      </View>
+    </View>
+  </ScrollView>
+</View>
+`;

@@ -1,0 +1,493 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PostsList/> @render should render the Loader component when loading the list 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    testID="loader"
+  >
+    <ActivityIndicator
+      animating={true}
+      color="#0000ff"
+      hidesWhenStopped={true}
+      size="large"
+    />
+  </View>
+</View>
+`;
+
+exports[`<PostsList/> @render should render the NoPosts component if not posts are found 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "flex": 1,
+        "justifyContent": "center",
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#688598",
+          "fontSize": 50,
+          "textAlign": "center",
+        }
+      }
+    >
+      NO POSTS YET
+    </Text>
+  </View>
+  <TouchableOpacity
+    activeOpacity={0.2}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#2D2A4A",
+          "borderRadius": 10,
+          "height": 40,
+          "justifyContent": "center",
+        },
+        Object {
+          "borderRadius": 100,
+          "bottom": 30,
+          "height": 50,
+          "position": "absolute",
+          "right": 10,
+          "shadowColor": "#2D2A4A",
+          "shadowOffset": Object {
+            "height": 2,
+            "width": 0,
+          },
+          "shadowOpacity": 0.5,
+          "shadowRadius": 3.84,
+          "width": 50,
+        },
+      ]
+    }
+  >
+    <Text
+      accessibilityLabel="submit-button"
+      style={
+        Array [
+          Object {
+            "color": "#F4F5F8",
+            "fontSize": 20,
+            "fontWeight": "bold",
+          },
+          Object {
+            "fontSize": 30,
+          },
+        ]
+      }
+    >
+      +
+    </Text>
+  </TouchableOpacity>
+</View>
+`;
+
+exports[`<PostsList/> @render should render the list of posts 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <ScrollView
+    data={
+      Array [
+        Object {
+          "comments": 0,
+          "createdAt": "2020-02-20T23:08:31.704Z",
+          "description": "Bangkok, Thailand’s capital, is a large city known for ornate shrines and vibrant street life. The boat-filled Chao Phraya River feeds its network of canals, flowing past the Rattanakosin royal district, home to opulent Grand Palace and its sacred Wat Phra Kaew Temple. Nearby is Wat Pho Temple with an enormous reclining Buddha and, on the opposite shore, Wat Arun Temple with its steep steps and Khmer-style spire.",
+          "docRef": "0264d0b6-a99f-421f-8d02-f87008888de8",
+          "image": "imgUrl",
+          "likes": 0,
+          "title": "Bangkok",
+          "userId": "YVHTtPKcyzReNwHNv3oyV9ArK8n2",
+        },
+        Object {
+          "comments": 0,
+          "createdAt": "2020-02-20T23:20:47.603Z",
+          "description": "Phuket City, on Phuket Island, is the capital of Thailand’s Phuket Province. In the Old Town, Thalang Road is lined with colorful 19th-century shophouses and Sino-Portuguese buildings. Built in 1903 by a wealthy tin merchant, Baan Chinpracha mansion has Italian floor tiles, shuttered windows and antique furniture. Set in a 1930s manor, the Thai Hua Museum has exhibits on Phuket’s culture and history.",
+          "docRef": "52e6b747-ec3d-4bb3-b445-49cabbc85bca",
+          "image": "imgUrl",
+          "likes": 0,
+          "title": "Phuket ",
+          "userId": "YVHTtPKcyzReNwHNv3oyV9ArK8n2",
+        },
+        Object {
+          "comments": 0,
+          "createdAt": "2020-02-20T23:07:56.308Z",
+          "description": "Ko Samui, Thailand’s second largest island, lies in the Gulf of Thailand off the east coast of the Kra Isthmus. It's known for its palm-fringed beaches, coconut groves and dense, mountainous rainforest, plus luxury resorts and posh spas. The landmark 12m-tall golden Big Buddha statue at Wat Phra Yai Temple is located on a tiny island connected to Ko Samui by a causeway.",
+          "docRef": "93caf8c8-0bf5-4625-9ffa-bc8b8ed31a56",
+          "image": "imgUrl",
+          "likes": 0,
+          "title": "Koh Samui",
+          "userId": "YVHTtPKcyzReNwHNv3oyV9ArK8n2",
+        },
+      ]
+    }
+    disableVirtualization={false}
+    horizontal={false}
+    initialNumToRender={10}
+    maxToRenderPerBatch={10}
+    numColumns={1}
+    onEndReachedThreshold={2}
+    removeClippedSubviews={true}
+    scrollEventThrottle={50}
+    stickyHeaderIndices={Array []}
+    testID="listPosts"
+    updateCellsBatchingPeriod={50}
+    viewabilityConfigCallbackPairs={Array []}
+    windowSize={21}
+  >
+    <View
+      style={null}
+    >
+      <TouchableOpacity
+        activeOpacity={0.2}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#F4F5F8",
+            "flex": 1,
+            "flexDirection": "row",
+            "height": 200,
+            "marginBottom": 10,
+            "padding": 10,
+            "shadowColor": "#2D2A4A",
+            "shadowOffset": Object {
+              "height": 2,
+              "width": 0,
+            },
+            "shadowOpacity": 0.5,
+            "shadowRadius": 3.84,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "justifyContent": "center",
+            }
+          }
+        >
+          <Image
+            resizeMode="cover"
+            source={
+              Object {
+                "uri": undefined,
+              }
+            }
+            style={
+              Object {
+                "height": 150,
+                "width": 150,
+              }
+            }
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flex": 1,
+              }
+            }
+          >
+            <Text
+              ellipsizeMode="tail"
+              numberOfLines={1}
+              style={
+                Object {
+                  "fontSize": 16,
+                  "fontWeight": "bold",
+                }
+              }
+            >
+              Bangkok
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "flex": 2,
+              }
+            }
+          >
+            <Text
+              ellipsizeMode="tail"
+              numberOfLines={5}
+            >
+              Bangkok, Thailand’s capital, is a large city known for ornate shrines and vibrant street life. The boat-filled Chao Phraya River feeds its network of canals, flowing past the Rattanakosin royal district, home to opulent Grand Palace and its sacred Wat Phra Kaew Temple. Nearby is Wat Pho Temple with an enormous reclining Buddha and, on the opposite shore, Wat Arun Temple with its steep steps and Khmer-style spire.
+            </Text>
+          </View>
+        </View>
+      </TouchableOpacity>
+    </View>
+    <View
+      style={null}
+    >
+      <TouchableOpacity
+        activeOpacity={0.2}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#F4F5F8",
+            "flex": 1,
+            "flexDirection": "row",
+            "height": 200,
+            "marginBottom": 10,
+            "padding": 10,
+            "shadowColor": "#2D2A4A",
+            "shadowOffset": Object {
+              "height": 2,
+              "width": 0,
+            },
+            "shadowOpacity": 0.5,
+            "shadowRadius": 3.84,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "justifyContent": "center",
+            }
+          }
+        >
+          <Image
+            resizeMode="cover"
+            source={
+              Object {
+                "uri": undefined,
+              }
+            }
+            style={
+              Object {
+                "height": 150,
+                "width": 150,
+              }
+            }
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flex": 1,
+              }
+            }
+          >
+            <Text
+              ellipsizeMode="tail"
+              numberOfLines={1}
+              style={
+                Object {
+                  "fontSize": 16,
+                  "fontWeight": "bold",
+                }
+              }
+            >
+              Phuket 
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "flex": 2,
+              }
+            }
+          >
+            <Text
+              ellipsizeMode="tail"
+              numberOfLines={5}
+            >
+              Phuket City, on Phuket Island, is the capital of Thailand’s Phuket Province. In the Old Town, Thalang Road is lined with colorful 19th-century shophouses and Sino-Portuguese buildings. Built in 1903 by a wealthy tin merchant, Baan Chinpracha mansion has Italian floor tiles, shuttered windows and antique furniture. Set in a 1930s manor, the Thai Hua Museum has exhibits on Phuket’s culture and history.
+            </Text>
+          </View>
+        </View>
+      </TouchableOpacity>
+    </View>
+    <View
+      style={null}
+    >
+      <TouchableOpacity
+        activeOpacity={0.2}
+        style={
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#F4F5F8",
+            "flex": 1,
+            "flexDirection": "row",
+            "height": 200,
+            "marginBottom": 10,
+            "padding": 10,
+            "shadowColor": "#2D2A4A",
+            "shadowOffset": Object {
+              "height": 2,
+              "width": 0,
+            },
+            "shadowOpacity": 0.5,
+            "shadowRadius": 3.84,
+          }
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "justifyContent": "center",
+            }
+          }
+        >
+          <Image
+            resizeMode="cover"
+            source={
+              Object {
+                "uri": undefined,
+              }
+            }
+            style={
+              Object {
+                "height": 150,
+                "width": 150,
+              }
+            }
+          />
+        </View>
+        <View
+          style={
+            Object {
+              "flex": 1,
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "flex": 1,
+              }
+            }
+          >
+            <Text
+              ellipsizeMode="tail"
+              numberOfLines={1}
+              style={
+                Object {
+                  "fontSize": 16,
+                  "fontWeight": "bold",
+                }
+              }
+            >
+              Koh Samui
+            </Text>
+          </View>
+          <View
+            style={
+              Object {
+                "flex": 2,
+              }
+            }
+          >
+            <Text
+              ellipsizeMode="tail"
+              numberOfLines={5}
+            >
+              Ko Samui, Thailand’s second largest island, lies in the Gulf of Thailand off the east coast of the Kra Isthmus. It's known for its palm-fringed beaches, coconut groves and dense, mountainous rainforest, plus luxury resorts and posh spas. The landmark 12m-tall golden Big Buddha statue at Wat Phra Yai Temple is located on a tiny island connected to Ko Samui by a causeway.
+            </Text>
+          </View>
+        </View>
+      </TouchableOpacity>
+    </View>
+  </ScrollView>
+  <TouchableOpacity
+    activeOpacity={0.2}
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#2D2A4A",
+          "borderRadius": 10,
+          "height": 40,
+          "justifyContent": "center",
+        },
+        Object {
+          "borderRadius": 100,
+          "bottom": 30,
+          "height": 50,
+          "position": "absolute",
+          "right": 10,
+          "shadowColor": "#2D2A4A",
+          "shadowOffset": Object {
+            "height": 2,
+            "width": 0,
+          },
+          "shadowOpacity": 0.5,
+          "shadowRadius": 3.84,
+          "width": 50,
+        },
+      ]
+    }
+  >
+    <Text
+      accessibilityLabel="submit-button"
+      style={
+        Array [
+          Object {
+            "color": "#F4F5F8",
+            "fontSize": 20,
+            "fontWeight": "bold",
+          },
+          Object {
+            "fontSize": 30,
+          },
+        ]
+      }
+    >
+      +
+    </Text>
+  </TouchableOpacity>
+</View>
+`;

@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AddNewPostForm /> should render the AddNewPostForm component 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <ScrollView
+    keyboardDismissMode="on-drag"
+    keyboardShouldPersistTaps="handled"
+  >
+    <View
+      style={
+        Object {
+          "paddingBottom": 0,
+        }
+      }
+    >
+      <TextInput
+        allowFontScaling={true}
+        inputAccessoryViewID="inputAccessoryView1"
+        placeholder="Post Title"
+        placeholderTextColor="grey"
+        rejectResponderTermination={true}
+        style={
+          Array [
+            Object {
+              "marginBottom": 10,
+              "padding": 5,
+            },
+            undefined,
+          ]
+        }
+        underlineColorAndroid="transparent"
+        value=""
+      />
+      <View
+        style={
+          Object {
+            "borderTopColor": "#ACD1E4",
+            "borderTopWidth": 0.5,
+          }
+        }
+      >
+        <TextInput
+          allowFontScaling={true}
+          inputAccessoryViewID="inputAccessoryView1"
+          multiline={true}
+          placeholder="Description"
+          placeholderTextColor="grey"
+          rejectResponderTermination={true}
+          style={
+            Array [
+              Object {
+                "marginBottom": 10,
+                "padding": 5,
+              },
+              Object {
+                "maxHeight": 220,
+                "minWidth": "100%",
+                "padding": 5,
+              },
+            ]
+          }
+          underlineColorAndroid="transparent"
+          value=""
+        />
+      </View>
+      <RCTInputAccessoryView
+        nativeID="inputAccessoryView1"
+        style={
+          Array [
+            undefined,
+            Object {
+              "position": "absolute",
+            },
+          ]
+        }
+      >
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "white",
+              "height": 50,
+              "justifyContent": "center",
+            }
+          }
+        >
+          <TouchableOpacity
+            activeOpacity={0.2}
+          >
+            <Image
+              source={
+                Object {
+                  "testUri": "../../../app/assets/images/add-image-icon.png",
+                }
+              }
+              style={
+                Object {
+                  "borderRadius": 100,
+                  "borderWidth": 1,
+                  "maxHeight": 40,
+                  "maxWidth": 40,
+                }
+              }
+            />
+          </TouchableOpacity>
+        </View>
+      </RCTInputAccessoryView>
+    </View>
+  </ScrollView>
+</View>
+`;

@@ -1,0 +1,177 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PostDetails /> should delete the post details 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <ScrollView>
+    <Image
+      source={
+        Object {
+          "testUri": "../../../app/assets/images/hols1.jpeg",
+        }
+      }
+      style={
+        Object {
+          "height": 400,
+          "width": 400,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "marginBottom": 10,
+          "marginTop": 10,
+        }
+      }
+    >
+      <View>
+        <Text>
+          10
+        </Text>
+        <Text>
+          10
+        </Text>
+      </View>
+      <View>
+        <Text>
+          Saturday 22nd Feb 2020
+        </Text>
+      </View>
+    </View>
+    <Text>
+      Hh
+    </Text>
+    <View
+      testID="loader"
+    >
+      <ActivityIndicator
+        animating={true}
+        color="#0000ff"
+        hidesWhenStopped={true}
+        size="large"
+      />
+    </View>
+  </ScrollView>
+</View>
+`;
+
+exports[`<PostDetails /> should display the loader when fetching the post details 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    testID="loader"
+  >
+    <ActivityIndicator
+      animating={true}
+      color="#0000ff"
+      hidesWhenStopped={true}
+      size="large"
+    />
+  </View>
+</View>
+`;
+
+exports[`<PostDetails /> should render the PostDetails component 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <ScrollView>
+    <Image
+      source={
+        Object {
+          "testUri": "../../../app/assets/images/hols1.jpeg",
+        }
+      }
+      style={
+        Object {
+          "height": 400,
+          "width": 400,
+        }
+      }
+    />
+    <View
+      style={
+        Object {
+          "alignItems": "center",
+          "flexDirection": "row",
+          "justifyContent": "space-between",
+          "marginBottom": 10,
+          "marginTop": 10,
+        }
+      }
+    >
+      <View>
+        <Text>
+          10
+        </Text>
+        <Text>
+          10
+        </Text>
+      </View>
+      <View>
+        <Text>
+          Saturday 22nd Feb 2020
+        </Text>
+      </View>
+    </View>
+    <Text>
+      Hh
+    </Text>
+    <TouchableOpacity
+      activeOpacity={0.2}
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#2D2A4A",
+            "borderRadius": 10,
+            "height": 40,
+            "justifyContent": "center",
+          },
+          Object {
+            "backgroundColor": "#A51931",
+            "marginTop": 20,
+          },
+        ]
+      }
+    >
+      <Text
+        accessibilityLabel="submit-button"
+        style={
+          Object {
+            "color": "#F4F5F8",
+            "fontSize": 20,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        DELETE
+      </Text>
+    </TouchableOpacity>
+  </ScrollView>
+</View>
+`;

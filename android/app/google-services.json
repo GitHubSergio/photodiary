@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "197719556039",
+    "firebase_url": "https://photodairy-15831.firebaseio.com",
+    "project_id": "photodairy-15831",
+    "storage_bucket": "photodairy-15831.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:197719556039:android:1a7b167190718b591d23e2",
+        "android_client_info": {
+          "package_name": "com.photodiary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "197719556039-a353em50suipogd95a5d0dvts77j5o4j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCRyO5M2nzKNzF_gsfH2ZMD1Oj76GelXpI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "197719556039-a353em50suipogd95a5d0dvts77j5o4j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

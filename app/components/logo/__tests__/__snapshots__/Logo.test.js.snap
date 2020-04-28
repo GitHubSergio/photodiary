@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Logo/> @render should render the Logo component 1`] = `
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <Image
+    source={
+      Object {
+        "testUri": "../../../app/assets/images/logo-resized.png",
+      }
+    }
+    style={
+      Object {
+        "alignSelf": "center",
+        "backgroundColor": "#2D2A4A",
+        "borderRadius": 100,
+        "marginBottom": 10,
+      }
+    }
+  />
+</View>
+`;
