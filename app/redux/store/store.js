@@ -1,10 +1,10 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { createStore, applyMiddleware, compose } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import AsyncStorage from '@react-native-community/async-storage';
-import { logger } from 'redux-logger';
 import { persistStore, persistReducer } from 'redux-persist';
 import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
+const createDebugger = require('redux-flipper').default;
 
 // Middleware: Redux Persist Config
 const persistConfig = {
@@ -20,12 +20,11 @@ const persistConfig = {
 
 // Middleware: Redux Persist Persisted Reducer
 const persistedReducer = persistReducer(persistConfig, rootReducer);
+const reduxDebugger = createDebugger();
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
-const store = createStore(
+let store = createStore(
   persistedReducer,
-  composeEnhancers(applyMiddleware(thunk, logger)),
+  applyMiddleware(thunk, reduxDebugger),
 );
 
 // Middleware: Redux Persist Persister
