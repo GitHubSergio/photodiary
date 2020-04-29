@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 import { logOut } from '../../redux/middlewares/signingMiddleware';
 
 // Components
-import SubmitButton from '../shared/buttons/SubmitButton';
+import Button from '../shared/buttons/Button';
 
 const Settings = () => {
   const dispatch = useDispatch();
@@ -18,7 +18,7 @@ const Settings = () => {
 
   return (
     <ScrollView>
-      <SubmitButton label="Log Out" onPress={handleLogOut} />
+      <Button label="Log Out" onPress={handleLogOut} />
     </ScrollView>
   );
 };

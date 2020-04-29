@@ -8,6 +8,7 @@ import React, {
 import { ScrollView } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
+import buttonStyles from '../../shared/buttons/buttonStyles';
 
 // Hooks
 import { useInput, useImagePicker } from '../../../utils/customHooks';
@@ -22,8 +23,8 @@ import {
 // Components
 import PostForm from '../post-form/PostForm';
 import PostImage from '../post-images/PostImage';
-import HeaderButton from '../../shared/buttons/HeaderButton';
 import Loader from '../../shared/loader/Loader';
+import Button from '../../shared/buttons/Button';
 
 const PostUpdate = () => {
   const { postDetails } = useSelector((state) => state.posts);
@@ -84,10 +85,20 @@ const PostUpdate = () => {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
-        <HeaderButton title="Update" action={handleUpdatePost} />
+        <Button
+          label="Update"
+          onPress={handleUpdatePost}
+          style={buttonStyles.headerButtonRT}
+          textStyle={buttonStyles.headerButtonText}
+        />
       ),
       headerLeft: () => (
-        <HeaderButton title="Close" action={handleCloseModal} />
+        <Button
+          label="Close"
+          onPress={handleCloseModal}
+          style={buttonStyles.headerButtonLT}
+          textStyle={buttonStyles.headerButtonText}
+        />
       ),
     });
   }, [handleCloseModal, handleUpdatePost, navigation]);

@@ -13,7 +13,7 @@ import { signIn, signUp } from '../../../redux/middlewares/signingMiddleware';
 // Components
 import Logo from '../../logo/Logo';
 import InputField from '../../shared/input-field/InputField';
-import SubmitButton from '../../shared/buttons/SubmitButton';
+import Button from '../../shared/buttons/Button';
 import Loader from '../../shared/loader/Loader';
 import Errors from '../../shared/errors/Errors';
 import SwitchForm from './SwitchForm';
@@ -89,7 +89,7 @@ const LoginForm = () => {
           <Loader />
         ) : (
           <>
-            <SubmitButton label="SUBMIT" onPress={handleSubmit} />
+            <Button label="SUBMIT" onPress={handleSubmit} />
             <SwitchForm route={name} />
           </>
         )}

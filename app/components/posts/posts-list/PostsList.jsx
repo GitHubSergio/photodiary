@@ -17,7 +17,7 @@ import {
 import PostsListItem from '../posts-list-item/PostsListItem';
 import Loader from '../../shared/loader/Loader';
 import NoPosts from '../no-posts/NoPosts';
-import SubmitButton from '../../shared/buttons/SubmitButton';
+import Button from '../../shared/buttons/Button';
 
 const ITEM_HEIGHT = 200;
 const extractKey = ({ postId }) => postId;
@@ -95,7 +95,7 @@ const PostsList = () => {
       ) : (
         <NoPosts />
       )}
-      <SubmitButton
+      <Button
         label="+"
         onPress={() => navigation.navigate('AddNewPostScreen')}
         style={postsListStyles.addButton}

@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useLayoutEffect } from 'react';
 import { ScrollView } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
+import buttonStyles from '../../shared/buttons/buttonStyles';
 
 // Hooks
 import { useInput, useImagePicker } from '../../../utils/customHooks';
@@ -17,9 +18,9 @@ import { alertFactory } from '../../shared/alert/alertFactory';
 
 // Components
 import PostForm from '../post-form/PostForm';
-import HeaderButton from '../../shared/buttons/HeaderButton';
 import PostImage from '../post-images/PostImage';
 import Loader from '../../shared/loader/Loader';
+import Button from '../../shared/buttons/Button';
 
 const PostAdd = () => {
   const { isCreatingPost } = useSelector((state) => state.posts);
@@ -64,7 +65,12 @@ const PostAdd = () => {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
-        <HeaderButton title="Post" action={handleCreatePost} />
+        <Button
+          label="Post"
+          onPress={handleCreatePost}
+          style={buttonStyles.headerButtonRT}
+          textStyle={buttonStyles.headerButtonText}
+        />
       ),
     });
   }, [handleCreatePost, navigation]);

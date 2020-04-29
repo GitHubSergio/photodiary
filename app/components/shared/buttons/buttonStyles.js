@@ -2,7 +2,7 @@
 import { StyleSheet } from 'react-native';
 import Colors from '../../../constants/Colors';
 
-const submitButtonStyles = StyleSheet.create({
+const buttonStyles = StyleSheet.create({
   submitButton: {
     backgroundColor: Colors.blueMain,
     borderRadius: 10,
@@ -15,6 +15,15 @@ const submitButtonStyles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
   },
+  headerButtonRT: {
+    marginRight: 10,
+  },
+  headerButtonLT: {
+    marginLeft: 10,
+  },
+  headerButtonText: {
+    fontSize: 18,
+  },
 });
 
-export default submitButtonStyles;
+export default buttonStyles;

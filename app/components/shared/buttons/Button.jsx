@@ -1,20 +1,20 @@
 // Imports
 import React from 'react';
 import { TouchableOpacity, Text } from 'react-native';
-import submitButtonStyles from './submitButtonStyles';
+import buttonStyles from './buttonStyles';
 
-const SubmitButton = ({ onPress, label, style, textStyle }) => {
+const Button = ({ onPress, label, style, textStyle }) => {
   return (
     <TouchableOpacity
-      style={[submitButtonStyles.submitButton, style]}
+      style={[buttonStyles.submitButton, style]}
       onPress={onPress}>
       <Text
         accessibilityLabel="submit-button"
-        style={[submitButtonStyles.text, textStyle]}>
+        style={[buttonStyles.text, textStyle]}>
         {label}
       </Text>
     </TouchableOpacity>
   );
 };
 
-export default SubmitButton;
+export default Button;

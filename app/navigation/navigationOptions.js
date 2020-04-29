@@ -4,6 +4,7 @@ import Colors from '../constants/Colors';
 const navigationOptions = {
   stack: {
     global: {
+      headerTitleAlign: 'center',
       headerStyle: {
         backgroundColor: Colors.blueMain,
       },
