@@ -1,5 +1,5 @@
 // Imports
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   View,
   KeyboardAvoidingView,
@@ -7,14 +7,42 @@ import {
   TouchableOpacity,
   Image,
   Platform,
+  Dimensions,
+  Keyboard,
 } from 'react-native';
 import postFormStyles from './postFormStyles';
 
 // Components
 import InputField from '../../shared/input-field/InputField';
 
+const APPROXIMATE_HEIGHT = 360;
+
 const PostForm = ({ title, description, handleChoosePhoto }) => {
   const inputAccessoryViewID = 'inputAccessoryView1';
+  console.log('Dimensions.get(window) >>>', Dimensions.get('window'));
+  console.log('Dimensions.get(window) >>>', Dimensions.get('screen'));
+  const [height, setHeight] = useState(APPROXIMATE_HEIGHT);
+
+  useEffect(() => {
+    let keyboardDidShowListener;
+
+    keyboardDidShowListener = Keyboard.addListener(
+      'keyboardDidShow',
+      keyboardDidShow,
+    );
+
+    return () => {
+      if (keyboardDidShowListener) {
+        keyboardDidShowListener.remove();
+      }
+    };
+  });
+
+  const keyboardDidShow = (e) => {
+    setHeight(e.endCoordinates.height); // sets the height after opening the keyboard
+  };
+
+  console.log('height >>>', height);
 
   return (
     <KeyboardAvoidingView
