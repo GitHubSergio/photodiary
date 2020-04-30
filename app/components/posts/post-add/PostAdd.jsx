@@ -78,9 +78,7 @@ const PostAdd = () => {
   return isCreatingPost || isSelectingImageFromDevice ? (
     <Loader />
   ) : (
-    <ScrollView
-      keyboardDismissMode="on-drag"
-      keyboardShouldPersistTaps="handled">
+    <>
       <PostForm
         title={title}
         description={description}
@@ -89,7 +87,7 @@ const PostAdd = () => {
       {imageUriDevice && (
         <PostImage uri={imageUriDevice} handleDeletePhoto={handleDeletePhoto} />
       )}
-    </ScrollView>
+    </>
   );
 };
 
