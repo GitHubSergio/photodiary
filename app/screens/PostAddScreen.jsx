@@ -6,7 +6,7 @@ import styles from '../components/shared/styles/styles';
 // Components
 import PostAdd from '../components/posts/post-add/PostAdd';
 
-const AddNewPostScreen = () => {
+const PostAddScreen = () => {
   return (
     <View style={styles.view}>
       <PostAdd />
@@ -14,4 +14,4 @@ const AddNewPostScreen = () => {
   );
 };
 
-export default AddNewPostScreen;
+export default PostAddScreen;
