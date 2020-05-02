@@ -72,6 +72,7 @@ const PostAdd = () => {
     });
   }, [handleCreatePost, navigation]);
 
+  // TODO - change form more like WhatsApp
   return isCreatingPost || isSelectingImageFromDevice ? (
     <Loader />
   ) : (
