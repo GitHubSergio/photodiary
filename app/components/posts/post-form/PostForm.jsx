@@ -10,20 +10,22 @@ import {
   Dimensions,
   Keyboard,
   ScrollView,
+  TextInput,
+  Text,
 } from 'react-native';
 import postFormStyles from './postFormStyles';
 
 // Components
 import InputField from '../../shared/input-field/InputField';
+import { IOSToolBox, KeyboardToolBox, ToolBoxButton } from './KeyboardToolBox';
 
 const APPROXIMATE_HEIGHT = 360;
 
 const PostForm = ({ title, description, handleChoosePhoto }) => {
   const inputAccessoryViewID = 'inputAccessoryView1';
   console.log('Dimensions.get(window) >>>', Dimensions.get('window'));
-  console.log('Dimensions.get(window) >>>', Dimensions.get('screen'));
   const [height, setHeight] = useState(APPROXIMATE_HEIGHT);
-  const [keyboardState, setKeyboardState] = useState(false);
+  const [isKeyboardOpen, setIsKeyboardOpen] = useState(false);
 
   useEffect(() => {
     let keyboardDidShowListener;
@@ -50,18 +52,23 @@ const PostForm = ({ title, description, handleChoosePhoto }) => {
   });
 
   const keyboardDidShow = (e) => {
-    setKeyboardState(!keyboardState);
+    setIsKeyboardOpen(!isKeyboardOpen);
     setHeight(e.endCoordinates.height); // sets the height after opening the keyboard
   };
 
   console.log('height >>>', height);
 
+  // TODO - refactor this component
   return (
-    <>
-      <ScrollView
-        keyboardDismissMode="on-drag"
-        keyboardShouldPersistTaps="handled"
-        style={{ flex: 1, backgroundColor: 'green' }}>
+    <View
+      style={{
+        flex: 1,
+      }}>
+      <KeyboardAvoidingView
+        behavior="padding"
+        enabled
+        keyboardVerticalOffset={90}
+        style={{ flex: 1, justifyContent: 'space-between' }}>
         <InputField
           placeHolder="Post Title"
           inputValue={title}
@@ -76,39 +83,15 @@ const PostForm = ({ title, description, handleChoosePhoto }) => {
             inputAccessoryViewID={inputAccessoryViewID}
           />
         </View>
-        {Platform.OS === 'ios' && (
-          <InputAccessoryView nativeID={inputAccessoryViewID}>
-            <View style={postFormStyles.keyboardToolBarContainer}>
-              <TouchableOpacity onPress={handleChoosePhoto}>
-                <Image
-                  source={require('../../../assets/images/add-image-icon.png')}
-                  style={postFormStyles.keyboardToolBarImage}
-                />
-              </TouchableOpacity>
-            </View>
-          </InputAccessoryView>
-        )}
-      </ScrollView>
-      {keyboardState && Platform.OS === 'android' && (
-        <View
-          style={{
-            backgroundColor: 'white',
-            height: 50,
-            justifyContent: 'center',
-            alignItems: 'center',
-            position: 'absolute',
-            bottom: height - 50,
-            width: Dimensions.get('window').width,
-          }}>
-          <TouchableOpacity onPress={handleChoosePhoto}>
-            <Image
-              source={require('../../../assets/images/add-image-icon.png')}
-              style={postFormStyles.keyboardToolBarImage}
-            />
-          </TouchableOpacity>
-        </View>
-      )}
-    </>
+        {
+          <KeyboardToolBox
+            handleAction={handleChoosePhoto}
+            iosNativeID={inputAccessoryViewID}
+            isKeyboardOpen={isKeyboardOpen}
+          />
+        }
+      </KeyboardAvoidingView>
+    </View>
   );
 };
 

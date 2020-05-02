@@ -1,5 +1,5 @@
 // Imports
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 import styles from '../../shared/styles/styles';
 import Colors from '../../../constants/Colors';
 
@@ -7,11 +7,10 @@ const postsListItemStyles = StyleSheet.create({
   postItemContainer: {
     flex: 1,
     flexDirection: 'row',
-    height: 200,
+    height: 150,
     backgroundColor: Colors.whiteMain,
     ...styles.shadow,
     alignItems: 'center',
-    padding: 10,
     marginBottom: 10,
   },
   imgView: {
@@ -30,7 +29,6 @@ const postsListItemStyles = StyleSheet.create({
     flex: 1,
   },
   titleView: {
-    flex: 1,
     alignItems: 'center',
   },
   title: {
@@ -38,7 +36,8 @@ const postsListItemStyles = StyleSheet.create({
     fontSize: 16,
   },
   descriptionView: {
-    flex: 2,
+    flex: 1,
+    paddingLeft: Platform.OS === 'android' ? 5 : 0,
   },
 });
 

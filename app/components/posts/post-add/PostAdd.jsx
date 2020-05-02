@@ -1,6 +1,6 @@
 // Imports
 import React, { useCallback, useEffect, useLayoutEffect } from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, Dimensions } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
 import buttonStyles from '../../shared/buttons/buttonStyles';
@@ -38,7 +38,8 @@ const PostAdd = () => {
     handleDeletePhoto,
   ] = useImagePicker();
 
-  console.log('imageUriDevice >>>', imageUriDevice);
+  const windowHeight = Dimensions.get('window').height/2;
+  console.log('Dimensions windowHeight >>>', windowHeight);
 
   useEffect(() => {
     if (error !== '') {
