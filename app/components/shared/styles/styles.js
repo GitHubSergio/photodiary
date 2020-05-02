@@ -1,12 +1,18 @@
 // Imports
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 import Colors from '../../../constants/Colors';
 
 const styles = StyleSheet.create({
   view: {
     flex: 1,
     backgroundColor: Colors.linearBgLC,
-    padding: 10,
+    ...Platform.select({
+      ios: { padding: 10 },
+    }),
+  },
+  viewNoPadding: {
+    flex: 1,
+    backgroundColor: Colors.linearBgLC,
   },
   // TODO - maybe create a function to make values dynamic
   shadow: {

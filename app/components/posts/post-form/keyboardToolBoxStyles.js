@@ -12,7 +12,7 @@ const keyboardToolBoxStyles = StyleSheet.create({
     padding: 10,
   },
   keyboardToolBarButtonDoneText: {
-    color: 'orange',
+    color: Colors.blueMain,
   },
   keyboardToolBarImage: {
     maxWidth: 40,

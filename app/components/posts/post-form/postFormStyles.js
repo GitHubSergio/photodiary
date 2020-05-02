@@ -11,7 +11,7 @@ const postFormStyles = StyleSheet.create({
   },
   postFormDescriptionInput: {
     padding: 5,
-    minWidth: '100%',
+    width: '100%',
   },
   separator: {
     flex: 2,

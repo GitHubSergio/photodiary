@@ -35,12 +35,12 @@ const IOSToolBox = ({ handleAction, iosNativeID }) => (
   </InputAccessoryView>
 );
 
-const KeyboardToolBox = ({ handleAction, iosNativeID, isKeyboardOpen }) => {
-  return Platform.OS === 'ios' ? (
+const KeyboardToolBox = Platform.select({
+  ios: ({ handleAction, iosNativeID }) => (
     <IOSToolBox handleAction={handleAction} iosNativeID={iosNativeID} />
-  ) : (
-    isKeyboardOpen && <ToolBoxButton handleAction={handleAction} />
-  );
-};
+  ),
+  android: ({ handleAction, isKeyboardOpen }) =>
+    isKeyboardOpen && <ToolBoxButton handleAction={handleAction} />,
+});
 
 export default KeyboardToolBox;

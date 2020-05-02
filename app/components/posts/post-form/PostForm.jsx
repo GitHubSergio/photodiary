@@ -43,7 +43,7 @@ const PostForm = ({ title, description, handleChoosePhoto }) => {
       <KeyboardAvoidingView
         behavior="padding"
         enabled
-        keyboardVerticalOffset={90}
+        keyboardVerticalOffset={80}
         style={postFormStyles.keyboardAvoidingView}>
         <View>
           <InputField
@@ -61,13 +61,11 @@ const PostForm = ({ title, description, handleChoosePhoto }) => {
             inputAccessoryViewID={inputAccessoryViewID}
           />
         </View>
-        {
-          <KeyboardToolBox
-            handleAction={handleChoosePhoto}
-            iosNativeID={inputAccessoryViewID}
-            isKeyboardOpen={isKeyboardOpen}
-          />
-        }
+        <KeyboardToolBox
+          handleAction={handleChoosePhoto}
+          iosNativeID={inputAccessoryViewID}
+          isKeyboardOpen={isKeyboardOpen}
+        />
       </KeyboardAvoidingView>
     </View>
   );
