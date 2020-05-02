@@ -1,30 +1,14 @@
 // Imports
 import React, { useEffect, useState } from 'react';
-import {
-  View,
-  KeyboardAvoidingView,
-  InputAccessoryView,
-  TouchableOpacity,
-  Image,
-  Platform,
-  Dimensions,
-  Keyboard,
-  ScrollView,
-  TextInput,
-  Text,
-} from 'react-native';
+import { View, KeyboardAvoidingView, Keyboard } from 'react-native';
 import postFormStyles from './postFormStyles';
 
 // Components
 import InputField from '../../shared/input-field/InputField';
-import { IOSToolBox, KeyboardToolBox, ToolBoxButton } from './KeyboardToolBox';
-
-const APPROXIMATE_HEIGHT = 360;
+import KeyboardToolBox from './KeyboardToolBox';
 
 const PostForm = ({ title, description, handleChoosePhoto }) => {
   const inputAccessoryViewID = 'inputAccessoryView1';
-  console.log('Dimensions.get(window) >>>', Dimensions.get('window'));
-  const [height, setHeight] = useState(APPROXIMATE_HEIGHT);
   const [isKeyboardOpen, setIsKeyboardOpen] = useState(false);
 
   useEffect(() => {
@@ -35,7 +19,6 @@ const PostForm = ({ title, description, handleChoosePhoto }) => {
       'keyboardDidShow',
       keyboardDidShow,
     );
-
     keyboardDidHideListener = Keyboard.addListener(
       'keyboardDidHide',
       keyboardDidShow,
@@ -51,29 +34,24 @@ const PostForm = ({ title, description, handleChoosePhoto }) => {
     };
   });
 
-  const keyboardDidShow = (e) => {
+  const keyboardDidShow = () => {
     setIsKeyboardOpen(!isKeyboardOpen);
-    setHeight(e.endCoordinates.height); // sets the height after opening the keyboard
   };
 
-  console.log('height >>>', height);
-
-  // TODO - refactor this component
   return (
-    <View
-      style={{
-        flex: 1,
-      }}>
+    <View style={postFormStyles.postFormContainer}>
       <KeyboardAvoidingView
         behavior="padding"
         enabled
         keyboardVerticalOffset={90}
-        style={{ flex: 1, justifyContent: 'space-between' }}>
-        <InputField
-          placeHolder="Post Title"
-          inputValue={title}
-          inputAccessoryViewID={inputAccessoryViewID}
-        />
+        style={postFormStyles.keyboardAvoidingView}>
+        <View>
+          <InputField
+            placeHolder="Post Title"
+            inputValue={title}
+            inputAccessoryViewID={inputAccessoryViewID}
+          />
+        </View>
         <View style={postFormStyles.separator}>
           <InputField
             style={postFormStyles.postFormDescriptionInput}

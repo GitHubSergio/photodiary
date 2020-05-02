@@ -4,10 +4,15 @@ import Colors from '../../../constants/Colors';
 
 const keyboardToolBoxStyles = StyleSheet.create({
   keyboardToolBarContainer: {
+    flexDirection: 'row',
     backgroundColor: Colors.whiteMain,
     height: 50,
-    justifyContent: 'center',
+    justifyContent: 'space-between',
     alignItems: 'center',
+    padding: 10,
+  },
+  keyboardToolBarButtonDoneText: {
+    color: 'orange',
   },
   keyboardToolBarImage: {
     maxWidth: 40,

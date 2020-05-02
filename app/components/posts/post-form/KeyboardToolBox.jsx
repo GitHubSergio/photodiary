@@ -6,10 +6,12 @@ import {
   Platform,
   InputAccessoryView,
   Image,
+  Text,
+  Keyboard,
 } from 'react-native';
 import keyboardToolBoxStyles from './keyboardToolBoxStyles';
 
-export const ToolBoxButton = ({ handleAction }) => {
+const ToolBoxButton = ({ handleAction }) => {
   return (
     <View style={keyboardToolBoxStyles.keyboardToolBarContainer}>
       <TouchableOpacity onPress={handleAction}>
@@ -18,21 +20,22 @@ export const ToolBoxButton = ({ handleAction }) => {
           style={keyboardToolBoxStyles.keyboardToolBarImage}
         />
       </TouchableOpacity>
+      <TouchableOpacity onPress={() => Keyboard.dismiss()}>
+        <Text style={keyboardToolBoxStyles.keyboardToolBarButtonDoneText}>
+          Done
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 };
 
-export const IOSToolBox = ({ handleAction, iosNativeID }) => (
+const IOSToolBox = ({ handleAction, iosNativeID }) => (
   <InputAccessoryView nativeID={iosNativeID}>
     <ToolBoxButton handleAction={handleAction} />
   </InputAccessoryView>
 );
 
-export const KeyboardToolBox = ({
-  handleAction,
-  iosNativeID,
-  isKeyboardOpen,
-}) => {
+const KeyboardToolBox = ({ handleAction, iosNativeID, isKeyboardOpen }) => {
   return Platform.OS === 'ios' ? (
     <IOSToolBox handleAction={handleAction} iosNativeID={iosNativeID} />
   ) : (
@@ -40,4 +43,4 @@ export const KeyboardToolBox = ({
   );
 };
 
-// export default KeyboardToolBox;
+export default KeyboardToolBox;

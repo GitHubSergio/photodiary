@@ -3,6 +3,12 @@ import { StyleSheet } from 'react-native';
 import Colors from '../../../constants/Colors';
 
 const postFormStyles = StyleSheet.create({
+  postFormContainer: {
+    flex: 1,
+  },
+  keyboardAvoidingView: {
+    flex: 1,
+  },
   postFormDescriptionInput: {
     padding: 5,
     minWidth: '100%',

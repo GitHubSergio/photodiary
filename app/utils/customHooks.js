@@ -45,7 +45,6 @@ export const useImagePicker = () => {
       } else {
         dispatch(imageFromDeviceSuccess('success'));
         if (response) {
-          console.log(response);
           const photoPath =
             Platform.OS === 'ios' ? response.uri : `file://${response.path}`;
           setImageUri(photoPath);
