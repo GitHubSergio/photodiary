@@ -1,14 +1,12 @@
 // Imports
-import { StyleSheet, Platform } from 'react-native';
+import { StyleSheet } from 'react-native';
 import Colors from '../../../constants/Colors';
 
 const styles = StyleSheet.create({
   view: {
     flex: 1,
     backgroundColor: Colors.linearBgLC,
-    ...Platform.select({
-      ios: { padding: 10 },
-    }),
+    padding: 10,
   },
   viewNoPadding: {
     flex: 1,

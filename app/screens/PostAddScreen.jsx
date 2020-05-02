@@ -8,7 +8,7 @@ import PostAdd from '../components/posts/post-add/PostAdd';
 
 const PostAddScreen = () => {
   return (
-    <View style={styles.view}>
+    <View style={styles.viewNoPadding}>
       <PostAdd />
     </View>
   );
