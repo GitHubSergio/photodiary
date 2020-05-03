@@ -59,7 +59,7 @@ const PostForm = ({ title, description, handleChoosePhoto }) => {
             <InputField
               style={[
                 postFormStyles.postFormDescriptionInput,
-                { maxHeight: toolbarPosition - 60 || 300 },
+                { maxHeight: toolbarPosition - 60 || 300, minHeight: 40 },
               ]}
               placeHolder="Description"
               inputValue={description}

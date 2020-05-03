@@ -8,7 +8,7 @@ import PostUpdate from '../components/posts/post-update/PostUpdate';
 
 const PostDetailsUpdateScreen = () => {
   return (
-    <View style={styles.view}>
+    <View style={styles.viewNoPadding}>
       <PostUpdate />
     </View>
   );

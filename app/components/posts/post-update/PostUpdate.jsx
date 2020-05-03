@@ -5,7 +5,6 @@ import React, {
   useLayoutEffect,
   useState,
 } from 'react';
-import { ScrollView } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
 import buttonStyles from '../../shared/buttons/buttonStyles';
@@ -31,6 +30,7 @@ const PostUpdate = () => {
   const { isUpdatingPost } = useSelector((state) => state.posts);
   const { isEditingPost } = useSelector((state) => state.posts);
   const { updatePostSuccess } = useSelector((state) => state.posts);
+  const { isSelectingImageFromDevice } = useSelector((state) => state.posts);
 
   const title = useInput(postDetails.title);
   const description = useInput(postDetails.description);
@@ -107,12 +107,10 @@ const PostUpdate = () => {
     setDisplayImageFromStorage(false);
   };
 
-  return isUpdatingPost ? (
+  return isUpdatingPost || isSelectingImageFromDevice ? (
     <Loader />
   ) : (
-    <ScrollView
-      keyboardDismissMode="on-drag"
-      keyboardShouldPersistTaps="handled">
+    <>
       <PostForm
         title={title}
         description={description}
@@ -124,7 +122,7 @@ const PostUpdate = () => {
         handleDeleteImageOnEdit={handleDeleteImageOnEdit}
         isEditingPost={isEditingPost}
       />
-    </ScrollView>
+    </>
   );
 };
 
