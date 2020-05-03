@@ -3,6 +3,9 @@ import { StyleSheet, Dimensions } from 'react-native';
 import Colors from '../../../constants/Colors';
 
 const postImageStyles = StyleSheet.create({
+  imageContainer: {
+    flex: 1,
+  },
   img: {
     width: Dimensions.get('window').width,
     height: 400,

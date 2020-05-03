@@ -11,9 +11,9 @@ import {
 } from 'react-native';
 import keyboardToolBoxStyles from './keyboardToolBoxStyles';
 
-const ToolBoxButton = ({ handleAction }) => {
+const ToolBoxButton = ({ handleAction, extraStyle }) => {
   return (
-    <View style={keyboardToolBoxStyles.keyboardToolBarContainer}>
+    <View style={[keyboardToolBoxStyles.keyboardToolBarContainer, extraStyle]}>
       <TouchableOpacity onPress={handleAction}>
         <Image
           source={require('../../../assets/images/add-image-icon.png')}
@@ -39,8 +39,10 @@ const KeyboardToolBox = Platform.select({
   ios: ({ handleAction, iosNativeID }) => (
     <IOSToolBox handleAction={handleAction} iosNativeID={iosNativeID} />
   ),
-  android: ({ handleAction, isKeyboardOpen }) =>
-    isKeyboardOpen && <ToolBoxButton handleAction={handleAction} />,
+  android: ({ handleAction, isKeyboardOpen, extraStyle }) =>
+    isKeyboardOpen && (
+      <ToolBoxButton handleAction={handleAction} extraStyle={extraStyle} />
+    ),
 });
 
 export default KeyboardToolBox;

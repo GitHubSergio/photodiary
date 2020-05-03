@@ -10,6 +10,7 @@ import KeyboardToolBox from './KeyboardToolBox';
 const PostForm = ({ title, description, handleChoosePhoto }) => {
   const inputAccessoryViewID = 'inputAccessoryView1';
   const [isKeyboardOpen, setIsKeyboardOpen] = useState(false);
+  const [toolbarPosition, setToolbarPosition] = useState();
 
   useEffect(() => {
     let keyboardDidShowListener;
@@ -34,40 +35,47 @@ const PostForm = ({ title, description, handleChoosePhoto }) => {
     };
   });
 
-  const keyboardDidShow = () => {
+  const keyboardDidShow = (e) => {
+    setToolbarPosition(e.endCoordinates.height - 50);
     setIsKeyboardOpen(!isKeyboardOpen);
   };
 
   return (
-    <View style={postFormStyles.postFormContainer}>
-      <KeyboardAvoidingView
-        behavior="padding"
-        enabled
-        keyboardVerticalOffset={80}
-        style={postFormStyles.keyboardAvoidingView}>
-        <View>
-          <InputField
-            placeHolder="Post Title"
-            inputValue={title}
-            inputAccessoryViewID={inputAccessoryViewID}
-          />
-        </View>
-        <View style={postFormStyles.separator}>
-          <InputField
-            style={postFormStyles.postFormDescriptionInput}
-            placeHolder="Description"
-            inputValue={description}
-            multiline
-            inputAccessoryViewID={inputAccessoryViewID}
-          />
-        </View>
-        <KeyboardToolBox
-          handleAction={handleChoosePhoto}
-          iosNativeID={inputAccessoryViewID}
-          isKeyboardOpen={isKeyboardOpen}
-        />
-      </KeyboardAvoidingView>
-    </View>
+    <>
+      <View style={postFormStyles.postFormContainer}>
+        <KeyboardAvoidingView
+          behavior="padding"
+          enabled
+          keyboardVerticalOffset={80}
+          style={postFormStyles.keyboardAvoidingView}>
+          <View>
+            <InputField
+              placeHolder="Post Title"
+              inputValue={title}
+              inputAccessoryViewID={inputAccessoryViewID}
+            />
+          </View>
+          <View style={postFormStyles.separator}>
+            <InputField
+              style={[
+                postFormStyles.postFormDescriptionInput,
+                { maxHeight: toolbarPosition - 60 || 300 },
+              ]}
+              placeHolder="Description"
+              inputValue={description}
+              multiline
+              inputAccessoryViewID={inputAccessoryViewID}
+            />
+          </View>
+        </KeyboardAvoidingView>
+      </View>
+      <KeyboardToolBox
+        handleAction={handleChoosePhoto}
+        iosNativeID={inputAccessoryViewID}
+        isKeyboardOpen={isKeyboardOpen}
+        extraStyle={{ bottom: toolbarPosition }}
+      />
+    </>
   );
 };
 

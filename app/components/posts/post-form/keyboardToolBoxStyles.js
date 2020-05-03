@@ -1,5 +1,5 @@
 // Imports
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 import Colors from '../../../constants/Colors';
 
 const keyboardToolBoxStyles = StyleSheet.create({
@@ -10,6 +10,13 @@ const keyboardToolBoxStyles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: 10,
+    ...Platform.select({
+      android: {
+        position: 'absolute',
+      },
+    }),
+    width: '100%',
+    zIndex: 2,
   },
   keyboardToolBarButtonDoneText: {
     color: Colors.blueMain,

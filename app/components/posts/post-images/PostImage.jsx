@@ -18,7 +18,7 @@ const PostImage = ({ uri, handleDeletePhoto, handleDeleteImageOnEdit }) => {
   };
 
   return (
-    <View>
+    <View style={postImageStyles.imageContainer}>
       {!!uri && (
         <TouchableOpacity
           style={postImageStyles.deleteBtnContainer}
