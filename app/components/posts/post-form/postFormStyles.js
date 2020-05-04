@@ -14,7 +14,7 @@ const postFormStyles = StyleSheet.create({
     width: '100%',
   },
   separator: {
-    flex: 2,
+    flex: 1,
     borderTopWidth: StyleSheet.hairlineWidth,
     borderTopColor: Colors.linearBgDC,
   },
