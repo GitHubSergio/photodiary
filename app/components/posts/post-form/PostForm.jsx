@@ -1,6 +1,6 @@
 // Imports
 import React, { useEffect, useState } from 'react';
-import { View, KeyboardAvoidingView, Keyboard } from 'react-native';
+import { View, KeyboardAvoidingView, Keyboard, StyleSheet } from 'react-native';
 import postFormStyles from './postFormStyles';
 
 // Components
@@ -40,13 +40,17 @@ const PostForm = ({ title, description, handleChoosePhoto }) => {
     setIsKeyboardOpen(!isKeyboardOpen);
   };
 
+  const descriptionStyle = StyleSheet.compose(
+    postFormStyles.postFormDescriptionInput,
+    { maxHeight: toolbarPosition > 0 ? toolbarPosition - 60 : 300 },
+  );
+
   return (
     <>
       <View style={postFormStyles.postFormContainer}>
         <KeyboardAvoidingView
           behavior="padding"
           enabled
-          keyboardVerticalOffset={80}
           style={postFormStyles.keyboardAvoidingView}>
           <View>
             <InputField
@@ -57,10 +61,7 @@ const PostForm = ({ title, description, handleChoosePhoto }) => {
           </View>
           <View style={postFormStyles.separator}>
             <InputField
-              style={[
-                postFormStyles.postFormDescriptionInput,
-                { maxHeight: toolbarPosition > 0 ? toolbarPosition - 60 : 300 },
-              ]}
+              style={descriptionStyle}
               placeHolder="Description"
               inputValue={description}
               multiline
