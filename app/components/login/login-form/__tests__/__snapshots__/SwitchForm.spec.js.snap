@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SwitchForm /> should return the label Log In if in the SignUpScreen 1`] = `
+<Button
+  onPress={[Function]}
+  title="Log In"
+/>
+`;
+
+exports[`<SwitchForm /> should return the label Sign Up if in the LoginScreen 1`] = `
+<Button
+  onPress={[Function]}
+  title="Sign Up"
+/>
+`;

@@ -5,7 +5,8 @@ import { applyMiddleware, createStore } from 'redux';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import rootReducer from '../redux/reducers';
-import { render } from '@testing-library/react-native';
+// import { render } from '@testing-library/react-native';
+import { render } from 'react-native-testing-library';
 import reduxStoreStateMocked from './redux-state';
 
 export const renderWithReduxMockedStore = (ui, updatedStore) => {
