@@ -130,9 +130,6 @@ export const FBUpdatePost = async (
   imageIdToBeDelete,
   imageUriToBeUploaded,
 ) => {
-  console.log('image to upload >>>', imageUriToBeUploaded);
-  console.log('image to delete >>>', imageIdToBeDelete);
-
   try {
     let imageResponse = {};
     if (imageUriToBeUploaded) {

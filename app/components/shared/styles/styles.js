@@ -8,6 +8,10 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.linearBgLC,
     padding: 10,
   },
+  viewNoPadding: {
+    flex: 1,
+    backgroundColor: Colors.linearBgLC,
+  },
   // TODO - maybe create a function to make values dynamic
   shadow: {
     shadowColor: Colors.blueMain,

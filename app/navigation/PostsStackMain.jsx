@@ -6,8 +6,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 // Screens
 import PostsScreen from '../screens/PostsScreen';
 import PostDetailsScreen from '../screens/PostDetailsScreen';
-import AddNewPostScreen from '../screens/AddNewPostScreen';
-import UpdatePostDetailsScreen from '../screens/UpdatePostDetailsScreen';
+import PostAddScreen from '../screens/PostAddScreen';
+import PostDetailsUpdateScreen from '../screens/PostDetailsUpdateScreen';
 
 const StackMain = createStackNavigator();
 const StackPosts = createStackNavigator();
@@ -21,7 +21,7 @@ const UpdateDetailsStack = () => {
       }}>
       <StackPostDetails.Screen
         name="UpdatePostDetailsScreen"
-        component={UpdatePostDetailsScreen}
+        component={PostDetailsUpdateScreen}
         options={{ ...navigationOptions.stack.editPostScreen }}
       />
     </StackPostDetails.Navigator>
@@ -50,7 +50,7 @@ const PostsStackNavigator = () => {
       />
       <StackPosts.Screen
         name="AddNewPostScreen"
-        component={AddNewPostScreen}
+        component={PostAddScreen}
         options={{ ...navigationOptions.stack.addNewPostScreen }}
       />
     </StackPosts.Navigator>

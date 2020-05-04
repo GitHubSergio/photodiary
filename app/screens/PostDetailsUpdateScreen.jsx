@@ -6,12 +6,12 @@ import styles from '../components/shared/styles/styles';
 // Components
 import PostUpdate from '../components/posts/post-update/PostUpdate';
 
-const UpdatePostDetailsScreen = () => {
+const PostDetailsUpdateScreen = () => {
   return (
-    <View style={styles.view}>
+    <View style={styles.viewNoPadding}>
       <PostUpdate />
     </View>
   );
 };
 
-export default UpdatePostDetailsScreen;
+export default PostDetailsUpdateScreen;

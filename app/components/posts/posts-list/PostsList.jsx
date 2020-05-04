@@ -19,7 +19,7 @@ import Loader from '../../shared/loader/Loader';
 import NoPosts from '../no-posts/NoPosts';
 import Button from '../../shared/buttons/Button';
 
-const ITEM_HEIGHT = 200;
+const ITEM_HEIGHT = 150;
 const extractKey = ({ postId }) => postId;
 
 const PostsList = () => {

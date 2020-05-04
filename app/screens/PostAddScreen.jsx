@@ -6,12 +6,12 @@ import styles from '../components/shared/styles/styles';
 // Components
 import PostAdd from '../components/posts/post-add/PostAdd';
 
-const AddNewPostScreen = () => {
+const PostAddScreen = () => {
   return (
-    <View style={styles.view}>
+    <View style={styles.viewNoPadding}>
       <PostAdd />
     </View>
   );
 };
 
-export default AddNewPostScreen;
+export default PostAddScreen;

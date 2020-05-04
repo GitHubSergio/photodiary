@@ -1,6 +1,5 @@
 // Imports
 import React, { useCallback, useEffect, useLayoutEffect } from 'react';
-import { ScrollView } from 'react-native';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
 import buttonStyles from '../../shared/buttons/buttonStyles';
@@ -37,8 +36,6 @@ const PostAdd = () => {
     handleChoosePhoto,
     handleDeletePhoto,
   ] = useImagePicker();
-
-  console.log('imageUriDevice >>>', imageUriDevice);
 
   useEffect(() => {
     if (error !== '') {
@@ -78,9 +75,7 @@ const PostAdd = () => {
   return isCreatingPost || isSelectingImageFromDevice ? (
     <Loader />
   ) : (
-    <ScrollView
-      keyboardDismissMode="on-drag"
-      keyboardShouldPersistTaps="handled">
+    <>
       <PostForm
         title={title}
         description={description}
@@ -89,7 +84,7 @@ const PostAdd = () => {
       {imageUriDevice && (
         <PostImage uri={imageUriDevice} handleDeletePhoto={handleDeletePhoto} />
       )}
-    </ScrollView>
+    </>
   );
 };
 
