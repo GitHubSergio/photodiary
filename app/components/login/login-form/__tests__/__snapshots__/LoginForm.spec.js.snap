@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<LoginForm /> @render Log In should render the Loader component when attempting to login 1`] = `
+exports[`<LoginForm /> @render @render Log In should render the Loader component when attempting to login 1`] = `
 <ScrollView>
   <View
     onLayout={[Function]}
@@ -84,7 +84,7 @@ exports[`<LoginForm /> @render Log In should render the Loader component when at
 </ScrollView>
 `;
 
-exports[`<LoginForm /> @render Log In should render the LoginScreen component 1`] = `
+exports[`<LoginForm /> @render @render Log In should render the LoginScreen component 1`] = `
 <ScrollView>
   <View
     onLayout={[Function]}
@@ -186,6 +186,7 @@ exports[`<LoginForm /> @render Log In should render the LoginScreen component 1`
       </>
       <Button
         onPress={[Function]}
+        testID="switch-btn"
         title="Log In"
       />
     </View>
@@ -193,7 +194,7 @@ exports[`<LoginForm /> @render Log In should render the LoginScreen component 1`
 </ScrollView>
 `;
 
-exports[`<LoginForm /> @render Log In should render the error component if email is missing 1`] = `
+exports[`<LoginForm /> @render @render Log In should render the error component if email is missing 1`] = `
 <ScrollView>
   <View
     onLayout={[Function]}
@@ -295,6 +296,7 @@ exports[`<LoginForm /> @render Log In should render the error component if email
       </>
       <Button
         onPress={[Function]}
+        testID="switch-btn"
         title="Log In"
       />
       <View
@@ -320,7 +322,7 @@ exports[`<LoginForm /> @render Log In should render the error component if email
 </ScrollView>
 `;
 
-exports[`<LoginForm /> @render Sign Up should render the Loader component when attempting to signup 1`] = `
+exports[`<LoginForm /> @render @render Sign Up should render the Loader component when attempting to signup 1`] = `
 <ScrollView>
   <View
     onLayout={[Function]}
@@ -445,7 +447,7 @@ exports[`<LoginForm /> @render Sign Up should render the Loader component when a
 </ScrollView>
 `;
 
-exports[`<LoginForm /> @render Sign Up should render the SignUp component 1`] = `
+exports[`<LoginForm /> @render @render Sign Up should render the SignUp component 1`] = `
 <ScrollView>
   <View
     onLayout={[Function]}
@@ -588,6 +590,7 @@ exports[`<LoginForm /> @render Sign Up should render the SignUp component 1`] = 
       </>
       <Button
         onPress={[Function]}
+        testID="switch-btn"
         title="Log In"
       />
     </View>

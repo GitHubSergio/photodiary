@@ -13,7 +13,7 @@ jest.mock('@react-navigation/native', () => ({
   useNavigation: jest.fn(),
 }));
 
-describe('<SwitchForm />', () => {
+/*describe('<SwitchForm />', () => {
   it('should return the label Sign Up if in the LoginScreen', () => {
     const { toJSON } = render(<SwitchForm route="LoginScreen" />);
     expect(toJSON()).toMatchSnapshot();
@@ -23,4 +23,4 @@ describe('<SwitchForm />', () => {
     const { toJSON } = render(<SwitchForm route="SignUpScreen" />);
     expect(toJSON()).toMatchSnapshot();
   });
-});
+});*/
