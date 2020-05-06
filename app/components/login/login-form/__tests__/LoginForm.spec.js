@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import React from 'react';
+/*import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import { renderWithRedux } from 'test-utils';
 import { useNavigation, useRoute } from '@react-navigation/native';
@@ -18,9 +18,9 @@ jest.mock('@react-native-firebase/firestore', () => ({}));
 
 jest.mock('react-native-image-picker', () => ({
   showImagePicker: jest.fn(),
-}));
+}));*/
 
-describe('<LoginForm />', () => {
+/*describe('<LoginForm />', () => {
   describe('@render', () => {
     describe('@render Log In', () => {
       it('should render the LoginScreen component', () => {
@@ -123,4 +123,4 @@ describe('<LoginForm />', () => {
       expect(navigation).toHaveBeenCalled();
     });
   });
-});
+});*/

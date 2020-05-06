@@ -8,7 +8,7 @@ const SwitchForm = ({ route }) => {
   const goTo = route === 'LoginScreen' ? 'SignUpScreen' : 'LoginScreen';
   const label = route === 'LoginScreen' ? 'Sign Up' : 'Log In';
 
-  return <Button testID="switch-btn" onPress={() => navigation.navigate(goTo)} title={label} />;
+  return <Button accessibilityLabel="switch-btn" onPress={() => navigation.navigate(goTo)} title={label} />;
 };
 
 export default SwitchForm;

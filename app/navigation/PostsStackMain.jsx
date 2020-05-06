@@ -2,6 +2,7 @@
 import React from 'react';
 import navigationOptions from './navigationOptions';
 import { createStackNavigator } from '@react-navigation/stack';
+// import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 
 // Screens
 import PostsScreen from '../screens/PostsScreen';

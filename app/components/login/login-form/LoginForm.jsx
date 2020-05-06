@@ -53,7 +53,7 @@ const LoginForm = () => {
 
         {isSignUpScreen && (
           <InputField
-            testID="username"
+            accessibilityLabel="username"
             placeHolder="Username"
             inputValue={displayName}
             onSubmitEditing={handleSubmit}
@@ -61,14 +61,14 @@ const LoginForm = () => {
         )}
 
         <InputField
-          testID="email"
+          accessibilityLabel="email"
           placeHolder="Email"
           inputValue={email}
           onSubmitEditing={handleSubmit}
           keyboardType={'email-address'}
         />
         <InputField
-          testID="password"
+          accessibilityLabel="password"
           placeHolder="Password"
           inputValue={password}
           onSubmitEditing={handleSubmit}
@@ -77,7 +77,7 @@ const LoginForm = () => {
 
         {isSignUpScreen && (
           <InputField
-            testID="confirm-password"
+            accessibilityLabel="confirm-password"
             placeHolder="Confirm Password"
             inputValue={confirmPassword}
             onSubmitEditing={handleSubmit}
