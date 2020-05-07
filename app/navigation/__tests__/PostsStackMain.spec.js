@@ -60,31 +60,23 @@ const MockTabNavigator = () => {
 };
 const MockedNavigator = ({
   routeOne,
-  routeTwo,
-  routeThree,
   componentOne,
+  routeTwo,
   componentTwo,
-  componentThree,
   params = {},
 }) => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name={routeOne}
-          component={componentOne}
-          initialParams={params}
-          options={{ headerTitle: 'POSTS' }}
-        />
-        <Stack.Screen
-          name={routeTwo}
-          component={componentTwo}
+          name="LoginScreen"
+          component={LoginScreen}
           initialParams={params}
           options={{ headerTitle: 'LOG IN' }}
         />
         <Stack.Screen
-          name={routeThree}
-          component={componentThree}
+          name="SignUpScreen"
+          component={LoginScreen}
           initialParams={params}
           options={{ headerTitle: 'SIGN UP' }}
         />
@@ -102,11 +94,9 @@ describe('Testing react navigation', () => {
     const { getByText, getByLabelText } = renderWithRedux(
       <MockedNavigator
         routeOne="LoginScreen"
-        routeTwo="SignUpScreen"
-        routeThree="PostsScreen"
         componentOne={LoginScreen}
+        routeTwo="SignUpScreen"
         componentTwo={LoginScreen}
-        componentThree={PostsScreen}
       />,
     );
 
@@ -133,19 +123,54 @@ describe('Testing react navigation', () => {
       />,
     );*/
 
-    const { getByText, getByLabelText, debug, store } = renderWithRedux(
-      <MockTabNavigator />,
-    );
+    const {
+      getByText,
+      getByLabelText,
+      debug,
+      store,
+      rerender,
+    } = renderWithRedux(<MockNavigation user={false} />);
 
-    // console.log(store.getState());
-
-    /*fireEvent.changeText(getByLabelText('email'), 'email@mail.com');
+    // const signUpHeader = await waitForElement(() => getByText('POSTS'));
+    // const settingTabButton = getByText('Settings');
+    // fireEvent.press(settingTabButton);
+    // expect(getByText('Log Out')).toBeTruthy();
+    // console.log(getByText('Log Out').props);
+    fireEvent.changeText(getByLabelText('email'), 'email@mail.com');
     console.log(getByLabelText('email').props);
     fireEvent.changeText(getByLabelText('password'), '123456');
     console.log(getByLabelText('password').props);
     fireEvent.press(getByLabelText('submit-button'));
-    console.log(getByLabelText('submit-button').props);*/
-    const signUpHeader = await waitForElement(() => getByText('POSTS'));
+    console.log(getByLabelText('submit-button').props);
+    const props = {
+      user: {
+        isSigning: false,
+        userDetails: {
+          displayName: 'TestDisplayName',
+          email: 'email@mail.com',
+          uid: '12345',
+          refreshToken: '1234567',
+        },
+        error: '',
+      },
+      posts: {
+        isFetching: false,
+        allPosts: [],
+        error: '',
+        isCreatingPost: false,
+        createPostSuccess: 0,
+        postDetails: {},
+        isDeletingPost: false,
+        deletePostSuccess: 0,
+        isSelectingImageFromDevice: false,
+        selectImageFromDeviceSuccess: '',
+        isEditingPost: false,
+        isUpdatingPost: false,
+        updatePostSuccess: 0,
+      },
+    };
+
+    // rerender(<MockNavigation user />);
     debug();
   });
 });
