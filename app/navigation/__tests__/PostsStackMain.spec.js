@@ -85,6 +85,13 @@ describe('Navigation', () => {
       const postsHeader = getByText('POSTS');
       expect(postsHeader).toBeTruthy();
     });
+
+    it('should navigate from the posts tab to the settings tabs', () => {
+      const { getByText } = renderWithRedux(<MockNavigation user />);
+      fireEvent.press(getByText('Settings'));
+      const postsHeader = getByText('SETTINGS');
+      expect(postsHeader).toBeTruthy();
+    });
   });
 
   describe('Login Stack', () => {
