@@ -11,9 +11,8 @@ const initialState = {
   userDetails: {
     displayName: '',
     email: '',
-    userId: '',
-    status: 0,
-    accessToken: '',
+    uid: '',
+    refreshToken: '',
   },
   error: '',
 };
@@ -39,9 +38,8 @@ describe('userReducer', () => {
         userDetails: {
           displayName: 'Masa',
           email: 'masa@mail.com',
-          userId: 'YVHTtPKcyzReNwHNv3oyV9ArK8n2',
-          status: 200,
-          accessToken: 'abc123',
+          uid: 'YVHTtPKcyzReNwHNv3oyV9ArK8n2',
+          refreshToken: 'abc123',
         },
       }),
     ).toEqual({
@@ -50,8 +48,7 @@ describe('userReducer', () => {
         displayName: 'Masa',
         email: 'masa@mail.com',
         userId: 'YVHTtPKcyzReNwHNv3oyV9ArK8n2',
-        status: 200,
-        accessToken: 'abc123',
+        refreshToken: 'abc123',
       },
     });
   });
