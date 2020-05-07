@@ -171,6 +171,6 @@ describe('Testing react navigation', () => {
     };
 
     // rerender(<MockNavigation user />);
-    debug();
+    // debug();
   });
 });

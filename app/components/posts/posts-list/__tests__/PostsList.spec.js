@@ -17,8 +17,6 @@ jest.mock('react-redux', () => {
   };
 });
 
-jest.mock('axios');
-
 jest.mock('@react-native-firebase/auth', () => ({}));
 
 jest.mock('@react-native-firebase/firestore', () => ({}));
