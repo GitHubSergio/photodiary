@@ -1,15 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<SwitchForm /> should return the label Log In if in the SignUpScreen 1`] = `
-<Button
-  onPress={[Function]}
-  title="Log In"
-/>
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <Button
+    accessibilityLabel="switch-btn"
+    title="Log In"
+  />
+</View>
 `;
 
 exports[`<SwitchForm /> should return the label Sign Up if in the LoginScreen 1`] = `
-<Button
-  onPress={[Function]}
-  title="Sign Up"
-/>
+<View
+  collapsable={true}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <Button
+    accessibilityLabel="switch-btn"
+    title="Sign Up"
+  />
+</View>
 `;

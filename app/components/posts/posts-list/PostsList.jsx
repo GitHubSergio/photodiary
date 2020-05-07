@@ -20,7 +20,6 @@ import NoPosts from '../no-posts/NoPosts';
 import Button from '../../shared/buttons/Button';
 
 const ITEM_HEIGHT = 150;
-const extractKey = ({ item }) => item.docRef;
 
 const PostsList = () => {
   const { email } = useSelector((state) => state.user.userDetails);
