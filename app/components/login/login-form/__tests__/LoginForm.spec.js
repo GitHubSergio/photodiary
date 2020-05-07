@@ -2,7 +2,7 @@
 import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import { renderWithRedux } from 'test-utils';
-import { useNavigation, useRoute } from '@react-navigation/native';
+import { useRoute } from '@react-navigation/native';
 import { fireEvent } from 'react-native-testing-library';
 import LoginForm from '../LoginForm';
 
@@ -79,35 +79,6 @@ describe('<LoginForm />', () => {
         fireEvent.press(getByLabelText('submit-button'));
         expect(baseElement).toMatchSnapshot();
       });
-    });
-  });
-
-  describe('@event', () => {
-    it('should navigate to the Sign Up screen when tapping the Sign Up button', () => {
-      const navigation = useNavigation.mockImplementationOnce(() => ({
-        navigate: jest.fn(),
-      }));
-      useRoute.mockImplementation(
-        jest.fn(() => ({
-          name: 'LoginScreen',
-        })),
-      );
-      const { getByLabelText } = renderWithRedux(<LoginForm />);
-      fireEvent.press(getByLabelText('switch-btn'));
-      expect(navigation).toHaveBeenCalled();
-    });
-    it('should navigate to the Sign In screen when tapping the Sign In button', () => {
-      const navigation = useNavigation.mockImplementationOnce(() => ({
-        navigate: jest.fn(),
-      }));
-      useRoute.mockImplementation(
-        jest.fn(() => ({
-          name: 'SignUpScreen',
-        })),
-      );
-      const { getByLabelText } = renderWithRedux(<LoginForm />);
-      fireEvent.press(getByLabelText('switch-btn'));
-      expect(navigation).toHaveBeenCalled();
     });
   });
 });
