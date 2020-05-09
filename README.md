@@ -177,6 +177,7 @@ Few screens from iOS and Android
 ![Alt text](./app/assets/screenshots/AddPostWithPhotoiOS.png)
 
 **PostDetailsScreen**
+
 ![Alt text](./app/assets/screenshots/PostDetailsAndroid.png)
 ![Alt text](./app/assets/screenshots/PostDetailsiOS.png)
 ![Alt text](./app/assets/screenshots/EditPostAndroid.png)
