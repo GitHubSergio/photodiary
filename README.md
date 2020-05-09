@@ -70,8 +70,8 @@ This has a very basic usage of the FlatList. I create a button to navigate to th
 Thoughts: I played a lot with the useEffect in here and with useIsFocused and useNavigation hooks from react navigation. These hooks helped to trigger different redux actions based on the redux state also extracted using useSelector hook from redux
 
 ```
-...
-const { email } = useSelector((state) => state.user.userDetails);
+  ...
+  const { email } = useSelector((state) => state.user.userDetails);
   const { allPosts } = useSelector((state) => state.posts);
   const { isFetching } = useSelector((state) => state.posts);
   const { createPostSuccess } = useSelector((state) => state.posts);
@@ -120,6 +120,7 @@ const { email } = useSelector((state) => state.user.userDetails);
 ![Alt text](./app/assets/screenshots/PostsListAndroid.png)
 
 **PostAddScreen**
+
 Here to explore the image picker from the RNCommunity. To select an image I created a custom hook "useImagePicker"
 
 ```
