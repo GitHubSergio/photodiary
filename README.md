@@ -21,6 +21,40 @@ Thoughts: Nothing really unusual on this it was like creating a base InputField 
 
 This login form is also reused for the signup screen. It renders two additional fields based on the route name extracted with the hook useRoute.
 Thoughts: In an official project I would definitely create separate forms. After all the logic for the two forms may change and it would make it harder to manage and test.
+```
+return (
+    <ScrollView>
+      <KeyboardAvoidingView
+        behavior="position"
+        enabled
+        keyboardVerticalOffset={70}>
+        <Logo />
+
+        {isSignUpScreen && (
+          <InputField
+            accessibilityLabel="username"
+            placeHolder="Username"
+            inputValue={displayName}
+            onSubmitEditing={handleSubmit}
+          />
+        )}
+
+        <InputField
+          accessibilityLabel="email"
+          placeHolder="Email"
+          inputValue={email}
+          onSubmitEditing={handleSubmit}
+          keyboardType={'email-address'}
+        />
+        <InputField
+          accessibilityLabel="password"
+          placeHolder="Password"
+          inputValue={password}
+          onSubmitEditing={handleSubmit}
+          secureTextEntry
+        />
+```
+
 
 PostsScreen
 
