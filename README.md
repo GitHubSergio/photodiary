@@ -179,8 +179,8 @@ Few screens from iOS and Android
 **PostDetailsScreen**
 
 ![Alt text](./app/assets/screenshots/PostDetailsAndroid.png)
-![Alt text](./app/assets/screenshots/PostDetailsiOS.png)
-![Alt text](./app/assets/screenshots/EditPostAndroid.png)
-![Alt text](./app/assets/screenshots/EditPostiOS.png)
 ![Alt text](./app/assets/screenshots/DeletePostAlertAndroid.png)
+![Alt text](./app/assets/screenshots/EditPostAndroid.png)
+![Alt text](./app/assets/screenshots/PostDetailsiOS.png)
 ![Alt text](./app/assets/screenshots/DeletePostAlertiOS.png)
+![Alt text](./app/assets/screenshots/EditPostiOS.png)
