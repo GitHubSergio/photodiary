@@ -2,6 +2,10 @@
 import { renderHook, act } from '@testing-library/react-hooks';
 import { useInput } from '../customHooks';
 
+jest.mock('react-native-image-picker', () => ({
+  showImagePicker: jest.fn(),
+}));
+
 describe('customHooks', () => {
   describe('useInput', () => {
     it('should return the text value', () => {

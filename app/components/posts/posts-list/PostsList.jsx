@@ -20,7 +20,6 @@ import NoPosts from '../no-posts/NoPosts';
 import Button from '../../shared/buttons/Button';
 
 const ITEM_HEIGHT = 150;
-const extractKey = ({ postId }) => postId;
 
 const PostsList = () => {
   const { email } = useSelector((state) => state.user.userDetails);
@@ -85,7 +84,7 @@ const PostsList = () => {
               imageUri={item.imageUri}
             />
           )}
-          keyExtractor={extractKey}
+          keyExtractor={(item) => item.docRef}
           getItemLayout={(data, index) => ({
             length: ITEM_HEIGHT,
             offset: ITEM_HEIGHT * index,

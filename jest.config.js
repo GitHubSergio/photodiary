@@ -6,6 +6,7 @@ module.exports = {
   setupFiles: [
     ...jestPreset.setupFiles,
     './__mocks__/@react-native-community/async-storage.js',
+    './node_modules/react-native-gesture-handler/jestSetup.js',
   ],
   setupFilesAfterEnv: ['@testing-library/react-native/cleanup-after-each'],
   moduleDirectories: ['node_modules', 'test-utils.js', '<rootDir>/app/utils/'],

@@ -10,40 +10,51 @@ exports[`<AddNewPostForm /> should render the AddNewPostForm component 1`] = `
     }
   }
 >
-  <ScrollView
-    keyboardDismissMode="on-drag"
-    keyboardShouldPersistTaps="handled"
+  <View
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
   >
     <View
       style={
-        Object {
-          "paddingBottom": 0,
-        }
+        Array [
+          Object {
+            "flex": 1,
+          },
+          Object {
+            "paddingBottom": 0,
+          },
+        ]
       }
     >
-      <TextInput
-        allowFontScaling={true}
-        inputAccessoryViewID="inputAccessoryView1"
-        placeholder="Post Title"
-        placeholderTextColor="grey"
-        rejectResponderTermination={true}
-        style={
-          Array [
-            Object {
-              "marginBottom": 10,
-              "padding": 5,
-            },
-            undefined,
-          ]
-        }
-        underlineColorAndroid="transparent"
-        value=""
-      />
+      <View>
+        <TextInput
+          allowFontScaling={true}
+          inputAccessoryViewID="inputAccessoryView1"
+          placeholder="Post Title"
+          placeholderTextColor="grey"
+          rejectResponderTermination={true}
+          style={
+            Array [
+              Object {
+                "marginBottom": 10,
+                "padding": 5,
+              },
+              undefined,
+            ]
+          }
+          underlineColorAndroid="transparent"
+          value=""
+        />
+      </View>
       <View
         style={
           Object {
             "borderTopColor": "#ACD1E4",
             "borderTopWidth": 0.5,
+            "flex": 1,
           }
         }
       >
@@ -60,60 +71,80 @@ exports[`<AddNewPostForm /> should render the AddNewPostForm component 1`] = `
                 "marginBottom": 10,
                 "padding": 5,
               },
-              Object {
-                "maxHeight": 220,
-                "minWidth": "100%",
-                "padding": 5,
-              },
+              Array [
+                Object {
+                  "padding": 5,
+                  "width": "100%",
+                },
+                Object {
+                  "maxHeight": 300,
+                },
+              ],
             ]
           }
           underlineColorAndroid="transparent"
           value=""
         />
       </View>
-      <RCTInputAccessoryView
-        nativeID="inputAccessoryView1"
-        style={
-          Array [
-            undefined,
+    </View>
+  </View>
+  <RCTInputAccessoryView
+    nativeID="inputAccessoryView1"
+    style={
+      Array [
+        undefined,
+        Object {
+          "position": "absolute",
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#F4F5F8",
+            "flexDirection": "row",
+            "height": 50,
+            "justifyContent": "space-between",
+            "padding": 10,
+            "width": "100%",
+            "zIndex": 2,
+          },
+          undefined,
+        ]
+      }
+    >
+      <>
+        <Image
+          source={
             Object {
-              "position": "absolute",
-            },
-          ]
-        }
-      >
-        <View
+              "testUri": "../../../app/assets/images/add-image-icon.png",
+            }
+          }
           style={
             Object {
-              "alignItems": "center",
-              "backgroundColor": "white",
-              "height": 50,
-              "justifyContent": "center",
+              "borderRadius": 100,
+              "borderWidth": 1,
+              "maxHeight": 40,
+              "maxWidth": 40,
+            }
+          }
+        />
+      </>
+      <>
+        <Text
+          style={
+            Object {
+              "color": "#2D2A4A",
             }
           }
         >
-          <TouchableOpacity
-            activeOpacity={0.2}
-          >
-            <Image
-              source={
-                Object {
-                  "testUri": "../../../app/assets/images/add-image-icon.png",
-                }
-              }
-              style={
-                Object {
-                  "borderRadius": 100,
-                  "borderWidth": 1,
-                  "maxHeight": 40,
-                  "maxWidth": 40,
-                }
-              }
-            />
-          </TouchableOpacity>
-        </View>
-      </RCTInputAccessoryView>
+          Done
+        </Text>
+      </>
     </View>
-  </ScrollView>
+  </RCTInputAccessoryView>
 </View>
 `;

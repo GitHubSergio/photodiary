@@ -3,9 +3,6 @@ import {
   GET_ALL_POSTS_REQUEST,
   GET_ALL_POSTS_SUCCESS,
   GET_ALL_POSTS_FAILURE,
-  GET_POST_DETAILS_REQUEST,
-  GET_POST_DETAILS_SUCCESS,
-  GET_POST_DETAILS_FAILURE,
   CLEAR_POSTS_ERRORS,
   CREATE_POST_REQUEST,
   CREATE_POST_SUCCESS,
@@ -22,9 +19,15 @@ const initialState = {
   allPosts: [],
   error: '',
   isCreatingPost: false,
-  success: 0,
+  createPostSuccess: 0,
   postDetails: {},
-  isDeleting: false,
+  isDeletingPost: false,
+  deletePostSuccess: 0,
+  isSelectingImageFromDevice: false,
+  selectImageFromDeviceSuccess: '',
+  isEditingPost: false,
+  isUpdatingPost: false,
+  updatePostSuccess: 0,
 };
 
 describe('postsReducer', () => {
@@ -87,65 +90,14 @@ describe('postsReducer', () => {
     });
   });
 
-  it('should handle GET_POST_DETAILS_REQUEST', () => {
-    expect(
-      postsReducer(initialState, {
-        type: GET_POST_DETAILS_REQUEST,
-        isFetching: true,
-      }),
-    ).toEqual({ ...initialState, isFetching: true });
-  });
-
-  it('should handle GET_POST_DETAILS_SUCCESS', () => {
-    expect(
-      postsReducer(initialState, {
-        type: GET_POST_DETAILS_SUCCESS,
-        postDetails: {
-          title: 'Bangkok',
-          description: 'Bangkok, Thailand’s capital.',
-          image: 'imgUrl',
-          likes: 0,
-          comments: 0,
-          createdAt: '2020-02-20T23:08:31.704Z',
-          userId: 'YVHTtPKcyzReNwHNv3oyV9ArK8n2',
-          docRef: '0264d0b6-a99f-421f-8d02-f87008888de8',
-        },
-      }),
-    ).toEqual({
-      ...initialState,
-      postDetails: {
-        title: 'Bangkok',
-        description: 'Bangkok, Thailand’s capital.',
-        image: 'imgUrl',
-        likes: 0,
-        comments: 0,
-        createdAt: '2020-02-20T23:08:31.704Z',
-        userId: 'YVHTtPKcyzReNwHNv3oyV9ArK8n2',
-        docRef: '0264d0b6-a99f-421f-8d02-f87008888de8',
-      },
-    });
-  });
-
-  it('should handle GET_POST_DETAILS_FAILURE', () => {
-    expect(
-      postsReducer(initialState, {
-        type: GET_POST_DETAILS_FAILURE,
-        error: 'Something went wrong!!!',
-      }),
-    ).toEqual({
-      ...initialState,
-      error: 'Something went wrong!!!',
-    });
-  });
-
   it('should handle CLEAR_POSTS_ERRORS', () => {
     expect(
       postsReducer(initialState, {
         type: CLEAR_POSTS_ERRORS,
+        clearPostsErrors: '',
       }),
     ).toEqual({
       ...initialState,
-      error: '',
     });
   });
 
@@ -165,11 +117,11 @@ describe('postsReducer', () => {
     expect(
       postsReducer(initialState, {
         type: CREATE_POST_SUCCESS,
-        newPost: 201,
+        createPostSuccess: 201,
       }),
     ).toEqual({
       ...initialState,
-      success: 201,
+      createPostSuccess: 201,
     });
   });
 
@@ -189,11 +141,11 @@ describe('postsReducer', () => {
     expect(
       postsReducer(initialState, {
         type: CLEAR_CREATE_POST_SUCCESS,
-        success: 0,
+        clearCreatePostSuccess: 0,
       }),
     ).toEqual({
       ...initialState,
-      success: 0,
+      createPostSuccess: 0,
     });
   });
 
@@ -201,7 +153,7 @@ describe('postsReducer', () => {
     expect(
       postsReducer(initialState, {
         type: CLEAR_GET_POST_DETAILS,
-        postDetails: {},
+        clearPostsDetails: {},
       }),
     ).toEqual({
       ...initialState,
@@ -213,11 +165,11 @@ describe('postsReducer', () => {
     expect(
       postsReducer(initialState, {
         type: DELETE_POST_REQUEST,
-        isDeleting: true,
+        isDeletingPost: true,
       }),
     ).toEqual({
       ...initialState,
-      isDeleting: true,
+      isDeletingPost: true,
     });
   });
 
@@ -225,11 +177,11 @@ describe('postsReducer', () => {
     expect(
       postsReducer(initialState, {
         type: DELETE_POST_SUCCESS,
-        deletePost: 200,
+        deletePostSuccess: 200,
       }),
     ).toEqual({
       ...initialState,
-      success: 200,
+      deletePostSuccess: 200,
     });
   });
 

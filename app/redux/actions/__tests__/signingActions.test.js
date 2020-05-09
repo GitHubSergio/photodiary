@@ -4,7 +4,7 @@ import {
   signingFailure,
   signingOut,
   clearSigningErrors,
-} from '../../actions/signingActions';
+} from '../signingActions';
 import {
   SIGNING_REQUEST,
   SIGNING_SUCCESS,

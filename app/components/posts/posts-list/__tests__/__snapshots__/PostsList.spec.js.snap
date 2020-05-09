@@ -53,8 +53,7 @@ exports[`<PostsList/> @render should render the NoPosts component if not posts a
       NO POSTS YET
     </Text>
   </View>
-  <TouchableOpacity
-    activeOpacity={0.2}
+  <
     style={
       Array [
         Object {
@@ -99,7 +98,7 @@ exports[`<PostsList/> @render should render the NoPosts component if not posts a
     >
       +
     </Text>
-  </TouchableOpacity>
+  </>
 </View>
 `;
 
@@ -152,7 +151,6 @@ exports[`<PostsList/> @render should render the list of posts 1`] = `
     horizontal={false}
     initialNumToRender={10}
     maxToRenderPerBatch={10}
-    numColumns={1}
     onEndReachedThreshold={2}
     removeClippedSubviews={true}
     scrollEventThrottle={50}
@@ -165,17 +163,15 @@ exports[`<PostsList/> @render should render the list of posts 1`] = `
     <View
       style={null}
     >
-      <TouchableOpacity
-        activeOpacity={0.2}
+      <
         style={
           Object {
             "alignItems": "center",
             "backgroundColor": "#F4F5F8",
             "flex": 1,
             "flexDirection": "row",
-            "height": 200,
+            "height": 150,
             "marginBottom": 10,
-            "padding": 10,
             "shadowColor": "#2D2A4A",
             "shadowOffset": Object {
               "height": 2,
@@ -221,7 +217,6 @@ exports[`<PostsList/> @render should render the list of posts 1`] = `
             style={
               Object {
                 "alignItems": "center",
-                "flex": 1,
               }
             }
           >
@@ -241,7 +236,8 @@ exports[`<PostsList/> @render should render the list of posts 1`] = `
           <View
             style={
               Object {
-                "flex": 2,
+                "flex": 1,
+                "paddingLeft": 0,
               }
             }
           >
@@ -253,22 +249,20 @@ exports[`<PostsList/> @render should render the list of posts 1`] = `
             </Text>
           </View>
         </View>
-      </TouchableOpacity>
+      </>
     </View>
     <View
       style={null}
     >
-      <TouchableOpacity
-        activeOpacity={0.2}
+      <
         style={
           Object {
             "alignItems": "center",
             "backgroundColor": "#F4F5F8",
             "flex": 1,
             "flexDirection": "row",
-            "height": 200,
+            "height": 150,
             "marginBottom": 10,
-            "padding": 10,
             "shadowColor": "#2D2A4A",
             "shadowOffset": Object {
               "height": 2,
@@ -314,7 +308,6 @@ exports[`<PostsList/> @render should render the list of posts 1`] = `
             style={
               Object {
                 "alignItems": "center",
-                "flex": 1,
               }
             }
           >
@@ -334,7 +327,8 @@ exports[`<PostsList/> @render should render the list of posts 1`] = `
           <View
             style={
               Object {
-                "flex": 2,
+                "flex": 1,
+                "paddingLeft": 0,
               }
             }
           >
@@ -346,22 +340,20 @@ exports[`<PostsList/> @render should render the list of posts 1`] = `
             </Text>
           </View>
         </View>
-      </TouchableOpacity>
+      </>
     </View>
     <View
       style={null}
     >
-      <TouchableOpacity
-        activeOpacity={0.2}
+      <
         style={
           Object {
             "alignItems": "center",
             "backgroundColor": "#F4F5F8",
             "flex": 1,
             "flexDirection": "row",
-            "height": 200,
+            "height": 150,
             "marginBottom": 10,
-            "padding": 10,
             "shadowColor": "#2D2A4A",
             "shadowOffset": Object {
               "height": 2,
@@ -407,7 +399,6 @@ exports[`<PostsList/> @render should render the list of posts 1`] = `
             style={
               Object {
                 "alignItems": "center",
-                "flex": 1,
               }
             }
           >
@@ -427,7 +418,8 @@ exports[`<PostsList/> @render should render the list of posts 1`] = `
           <View
             style={
               Object {
-                "flex": 2,
+                "flex": 1,
+                "paddingLeft": 0,
               }
             }
           >
@@ -439,11 +431,10 @@ exports[`<PostsList/> @render should render the list of posts 1`] = `
             </Text>
           </View>
         </View>
-      </TouchableOpacity>
+      </>
     </View>
   </ScrollView>
-  <TouchableOpacity
-    activeOpacity={0.2}
+  <
     style={
       Array [
         Object {
@@ -488,6 +479,6 @@ exports[`<PostsList/> @render should render the list of posts 1`] = `
     >
       +
     </Text>
-  </TouchableOpacity>
+  </>
 </View>
 `;
