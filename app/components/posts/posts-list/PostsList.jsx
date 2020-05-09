@@ -84,7 +84,7 @@ const PostsList = () => {
               imageUri={item.imageUri}
             />
           )}
-          keyExtractor={(item) => item.docRef}
+          keyExtractor={(item) => item.postId}
           getItemLayout={(data, index) => ({
             length: ITEM_HEIGHT,
             offset: ITEM_HEIGHT * index,
