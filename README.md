@@ -11,6 +11,7 @@ Purpose of this project:
 - During the project I also took on board the challenge to implement InputAccessoryView for Android
 
 LoginScreen 
+
 Simple login form with two TextInputs. It interacts with RNF to verify that a user exists. 
 Thoughts: This is the simplest and most basic way to use RNF. I think it works really well for this simple operations. I found that the most important part is to setup solid rules for the DB to ensure that only authenticated users can access their data
 
@@ -21,6 +22,7 @@ This login form is also reused for the signup screen. It renders two additional 
 Thoughts: In an official project I would definitely create separate forms. After all the logic for the two forms may change and it would make it harder to manage and test. 
 
 PostsScreen
+
 This has a very basic usage of the FlatList. I create a button to navigate to the PostAddScreen which uses an absolute position (Twitter like).
 Thoughts: I played a lot with the useEffect in here and with useIsFocused and useNavigation hooks from react navigation. These hooks helped to trigger different redux actions based on the redux state also extracted using useSelector hook from redux
 
