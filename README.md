@@ -36,7 +36,7 @@ return (
         keyboardVerticalOffset={70}>
         <Logo />
 
-        {**isSignUpScreen** && (
+        {isSignUpScreen && (
           <InputField
             accessibilityLabel="username"
             placeHolder="Username"
@@ -61,6 +61,9 @@ return (
         />
         ...
 ```
+
+
+
 
 
 PostsScreen
