@@ -20,8 +20,13 @@ There is a base InputField component that accepts props from styles to a customH
 Thoughts: Nothing really unusual on this it was like creating a base InputField from the <input /> tag in React Web. Nice to implement a custom hooks for value and onChangeText.
 
 This login form is also reused for the signup screen. It renders two additional fields based on the route name extracted with the hook useRoute.
-Thoughts: In an official project I would definitely create separate forms. After all the logic for the two forms may change and it would make it harder to manage and test.
+Thoughts: In an official project I would definitely create separate forms. After all the logic for the two forms may change and it would make it harder to manage and test but it was useful to test the **useRoute** hook from the react navigation. 
+
 ```
+const { name } = useRoute();
+const isSignUpScreen = name === 'SignUpScreen';
+...
+
 return (
     <ScrollView>
       <KeyboardAvoidingView
@@ -53,6 +58,7 @@ return (
           onSubmitEditing={handleSubmit}
           secureTextEntry
         />
+        ...
 ```
 
 
