@@ -2,14 +2,14 @@
 
 Purpose of this project: 
 
-Explore RNFirebase
-Explore the new react navigation V5 including hooks and implementing unit tests for it
-Explore enzyme vs react-native-testing-library vs @testing-library/react-native
-Explore react-native-image-picker from the react native community (created a customHook for it)
-Explore redux hooks useDispatch and useSelector
-Setup Hermes engine for Android
-Use Flipper for debugging
-During the project I also took on board the challenge to implement InputAccessoryView for Android
+- Explore RNFirebase
+- Explore the new react navigation V5 including hooks and implementing unit tests for it
+- Explore enzyme vs react-native-testing-library vs @testing-library/react-native
+- Explore react-native-image-picker from the react native community (created a customHook for it)
+- Explore redux hooks useDispatch and useSelector
+- Setup Hermes engine for Android
+- Use Flipper for debugging
+- During the project I also took on board the challenge to implement InputAccessoryView for Android
 
 LoginScreen 
 Simple login form with two TextInputs. It interacts with RNF to verify that a user exists. 
