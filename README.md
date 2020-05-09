@@ -64,7 +64,7 @@ return (
 
 ![Alt text](./app/assets/screenshots/ios-login.png)
 
-PostsScreen
+**PostsScreen**
 
 This has a very basic usage of the FlatList. I create a button to navigate to the PostAddScreen which uses an absolute position (Twitter like).
 Thoughts: I played a lot with the useEffect in here and with useIsFocused and useNavigation hooks from react navigation. These hooks helped to trigger different redux actions based on the redux state also extracted using useSelector hook from redux
@@ -118,3 +118,52 @@ const { email } = useSelector((state) => state.user.userDetails);
 ```
 
 ![Alt text](./app/assets/screenshots/PostsListAndroid.png)
+
+**PostAddScreen**
+Here to explore the image picker from the RNCommunity. To select an image I created a custom hook "useImagePicker"
+
+```
+export const useImagePicker = () => {
+  const dispatch = useDispatch();
+  const [imageUriDevice, setImageUri] = useState();
+
+  const options = {
+    title: 'Select Photo',
+    storageOptions: {
+      skipBackup: true,
+      path: 'images',
+    },
+    permissionDenied: {
+      title: 'Camera Access',
+      text: 'Need permission to access the camera',
+    },
+  };
+
+  const handleChoosePhoto = () => {
+    dispatch(selectImageFromDeviceRequest(true));
+    ImagePicker.showImagePicker(options, (response) => {
+      if (response.didCancel) {
+        dispatch(selectImageFromDeviceFailure('Select image cancelled'));
+      } else if (response.error) {
+        dispatch(selectImageFromDeviceFailure(response.error));
+      } else {
+        dispatch(imageFromDeviceSuccess('success'));
+        if (response) {
+          const photoPath =
+            Platform.OS === 'ios' ? response.uri : `file://${response.path}`;
+          setImageUri(photoPath);
+        }
+      }
+      dispatch(selectImageFromDeviceRequest(false));
+    });
+  };
+
+  const handleDeletePhoto = () => {
+    setImageUri();
+  };
+
+  return [imageUriDevice, handleChoosePhoto, handleDeletePhoto];
+};
+```
+
+Few screens from iOS and Android
