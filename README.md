@@ -10,7 +10,7 @@ Purpose of this project:
 - Use Flipper for debugging
 - During the project I also took on board the challenge to implement InputAccessoryView for Android
 
-**LoginScreen
+**LoginScreen**
 
 Simple login form with two TextInputs. It interacts with RNF to verify that a user exists. 
 Thoughts: This is the simplest and most basic way to use RNF. I think it works really well for this simple operations. I found that the most important part is to setup solid rules for the DB to ensure that only authenticated users can access their data
