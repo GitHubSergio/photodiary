@@ -63,6 +63,7 @@ return (
 ```
 
 ![Alt text](./app/assets/screenshots/ios-login.png)
+![Alt text](./app/assets/screenshots/SignUpiOS.png)
 
 **PostsScreen**
 
