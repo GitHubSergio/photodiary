@@ -69,4 +69,4 @@ PostsScreen
 This has a very basic usage of the FlatList. I create a button to navigate to the PostAddScreen which uses an absolute position (Twitter like).
 Thoughts: I played a lot with the useEffect in here and with useIsFocused and useNavigation hooks from react navigation. These hooks helped to trigger different redux actions based on the redux state also extracted using useSelector hook from redux
 
-Add useEffect code from PostsList
+![Alt text](./app/assets/screenshots/PostsListAndroid.png)
