@@ -1,2 +1,2 @@
-# photodiary
+# Photodiary - iOS/Android
 # photodiary
