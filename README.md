@@ -1,5 +1,7 @@
 # Photodiary - iOS/Android
+
 Purpose of this project: 
+
 Explore RNFirebase
 Explore the new react navigation V5 including hooks and implementing unit tests for it
 Explore enzyme vs react-native-testing-library vs @testing-library/react-native
