@@ -169,7 +169,7 @@ export const useImagePicker = () => {
 Few screens from iOS and Android
 
 ![Alt text](./app/assets/screenshots/AddPostAndroid.png)
-![Alt text](./app/assets/screenshots/AddPostWithPhotoiOS.png)
 ![Alt text](./app/assets/screenshots/AllowAccessAndroid.png)
 ![Alt text](./app/assets/screenshots/SelectPhotoAndroid.png)
+![Alt text](./app/assets/screenshots/AddPostWithPhotoiOS.png)
 ![Alt text](./app/assets/screenshots/SelectPhotoiOS.png)
