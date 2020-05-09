@@ -69,4 +69,52 @@ PostsScreen
 This has a very basic usage of the FlatList. I create a button to navigate to the PostAddScreen which uses an absolute position (Twitter like).
 Thoughts: I played a lot with the useEffect in here and with useIsFocused and useNavigation hooks from react navigation. These hooks helped to trigger different redux actions based on the redux state also extracted using useSelector hook from redux
 
+```
+...
+const { email } = useSelector((state) => state.user.userDetails);
+  const { allPosts } = useSelector((state) => state.posts);
+  const { isFetching } = useSelector((state) => state.posts);
+  const { createPostSuccess } = useSelector((state) => state.posts);
+  const { deletePostSuccess } = useSelector((state) => state.posts);
+  const { updatePostSuccess } = useSelector((state) => state.posts);
+
+  const dispatch = useDispatch();
+  const navigation = useNavigation();
+  const isFocused = useIsFocused();
+
+  useEffect(() => {
+    if (email) {
+      dispatch(getAllPosts());
+      console.log('USEEFFECT ONE');
+    }
+  }, [dispatch, email]);
+
+  useEffect(() => {
+    if (isFocused && createPostSuccess) {
+      console.log('USEEFFECT IF ONE');
+      dispatch(clearPostsSuccess(0));
+      dispatch(getAllPosts());
+    }
+
+    if (updatePostSuccess) {
+      console.log('USEEFFECT IF TWO');
+      dispatch(clearUpdatePostSuccess(0));
+      dispatch(getAllPosts());
+    }
+
+    if (isFocused && deletePostSuccess) {
+      console.log('USEEFFECT IF THREE');
+      dispatch(clearDeletePostSuccess(0));
+      dispatch(getAllPosts());
+    }
+  }, [
+    isFocused,
+    createPostSuccess,
+    deletePostSuccess,
+    updatePostSuccess,
+    dispatch,
+  ]);
+  ...
+```
+
 ![Alt text](./app/assets/screenshots/PostsListAndroid.png)
