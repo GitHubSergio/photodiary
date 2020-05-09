@@ -20,6 +20,7 @@ jest.mock('react-native-image-picker', () => ({
   showImagePicker: jest.fn(),
 }));
 
+// TODO - check coverage
 describe('<LoginForm />', () => {
   describe('@render', () => {
     describe('@render Log In', () => {
