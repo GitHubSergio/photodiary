@@ -30,7 +30,7 @@ const MockTabNavigator = () => {
     </NavigationContainer>
   );
 };
-const MockedNavigator = ({
+const MockedStackNavigator = ({
   routeOne,
   componentOne,
   optionsOne = { headerTitle: 'LOG IN' },
@@ -61,7 +61,7 @@ const MockedNavigator = ({
 
 const MockNavigation = ({ user = {} }) => {
   return !user ? (
-    <MockedNavigator
+    <MockedStackNavigator
       routeOne="LoginScreen"
       componentOne={LoginScreen}
       routeTwo="SignUpScreen"
@@ -97,7 +97,7 @@ describe('Navigation', () => {
   describe('Login Stack', () => {
     it('should navigate to the Sign Up screen', async () => {
       const { getByText, getByLabelText } = renderWithRedux(
-        <MockedNavigator
+        <MockedStackNavigator
           routeOne="LoginScreen"
           componentOne={LoginScreen}
           routeTwo="SignUpScreen"
@@ -114,7 +114,7 @@ describe('Navigation', () => {
 
     it('should navigate to the Sign In screen', async () => {
       const { getByText, getByLabelText } = renderWithRedux(
-        <MockedNavigator
+        <MockedStackNavigator
           routeOne="SignUpScreen"
           componentOne={LoginScreen}
           optionsOne={{ headerTitle: 'SIGN UP' }}

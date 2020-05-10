@@ -317,7 +317,91 @@ Few screens from iOS and Android
 
 I work on a daily basis with jest & enzyme, so the most natural solution was to implement tests with both. As for the enzyme documentation there are some limitation for
 RN therefore I looked into other solutions. I explored the react testing library for the web from Kent C. Dodds and found out that there is an implementation for RN and
-based on the same principles [@testing-library/react-native](https://www.native-testing-library.com/). I also found [react-native-testing-library](https://callstack
-.github.io/react-native-testing-library/) from callstack.com. After having compared the the two library for RN I decided to go for the one from Kent Dodds as I found it
-closer to the principles of the web implementation. Some part of the documentation may need updating e.g. mocking react navigation seems to be referring to V4 but I found
-this article [Testing your react-navigation v5 hooks](https://medium.com/@dariaruckaolszaska/testing-your-react-navigation-5-hooks-b8b8f745e5b6) and used that implementation.
+based on the same principles [@testing-library/react-native](https://www.native-testing-library.com/).
+I also found [react-native-testing-library](https://callstack.github.io/react-native-testing-library/) from callstack.com. After having compared the the two library for
+RN I decided to go for the one from Kent Dodds as I was just more comfortable with the api and it's closer to the principles of the one used for the web. Some part
+of the documentation may need updating e.g. mocking react navigation seems to be referring to V4 but I found this article [Testing your react-navigation v5 hooks](https://medium.com/@dariaruckaolszaska/testing-your-react-navigation-5-hooks-b8b8f745e5b6) and used that implementation.
+
+```
+const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
+const MockTabNavigator = () => {
+  return (
+    <NavigationContainer>
+      <Tab.Navigator>
+        <Tab.Screen name="Posts" component={PostsStackMain} />
+        <Tab.Screen name="Settings" component={SettingsStackNavigator} />
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
+};
+const MockedStackNavigator = ({
+  routeOne,
+  componentOne,
+  optionsOne = { headerTitle: 'LOG IN' },
+  routeTwo,
+  componentTwo,
+  optionsTwo = { headerTitle: 'SIGN UP' },
+  params = {},
+}) => {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name={routeOne}
+          component={componentOne}
+          initialParams={params}
+          options={{ ...optionsOne }}
+        />
+        <Stack.Screen
+          name={routeTwo}
+          component={componentTwo}
+          initialParams={params}
+          options={{ ...optionsTwo }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
+
+const MockNavigation = ({ user = {} }) => {
+  return !user ? (
+    <MockedStackNavigator
+      routeOne="LoginScreen"
+      componentOne={LoginScreen}
+      routeTwo="SignUpScreen"
+      componentTwo={LoginScreen}
+    />
+  ) : (
+    <MockTabNavigator />
+  );
+};
+```
+
+Some tests for the navigation
+
+```
+it('should navigate from the posts tab to the settings tabs', () => {
+      const { getByText } = renderWithRedux(<MockNavigation user />);
+      fireEvent.press(getByText('Settings'));
+      const postsHeader = getByText('SETTINGS');
+      expect(postsHeader).toBeTruthy();
+    });
+
+it('should navigate to the Sign Up screen', async () => {
+      const { getByText, getByLabelText } = renderWithRedux(
+        <MockedStackNavigator
+          routeOne="LoginScreen"
+          componentOne={LoginScreen}
+          routeTwo="SignUpScreen"
+          componentTwo={LoginScreen}
+        />,
+      );
+      const goToSignUpButton = getByLabelText('switch-btn');
+      fireEvent.press(goToSignUpButton);
+      const signUpHeader = getByText('SIGN UP');
+      expect(signUpHeader).toBeTruthy();
+      const usernameField = getByLabelText('username');
+      expect(usernameField).toBeTruthy();
+    });
+```
