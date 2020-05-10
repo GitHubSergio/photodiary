@@ -19,7 +19,7 @@ Simple login form with two TextInputs. It interacts with RNF to verify that a us
 solid
 rules for the DB to ensure that only authenticated users can access their data
 
-There is a base InputField component that accepts props, from styles to a customHook “useInput” and secureTextEntry prop.
+There is a base InputField component that accepts props, from styles to a customHook **useInput** and secureTextEntry prop.
 
 ```
 const InputField = ({
@@ -52,8 +52,8 @@ export const useInput = (initialValue = '') => {
 };
 ```
 
-**Thoughts**: Nothing really unusual on this it was like creating a base InputField from the <input /> tag in React Web. Nice to implement a custom hooks for value and
-onChangeText.
+**Thoughts**: Nothing really unusual on this it was like creating a base InputField from the <input /> tag in React Web. Nice to implement a custom hooks for the field
+**value** and **onChangeText**.
 
 This login form is also reused for the signup screen. It renders two additional fields based on the route name extracted with the hook useRoute.
 
@@ -157,8 +157,9 @@ This has a very basic usage of the FlatList. I create a button to navigate to th
   ...
 ```
 
-**Thoughts**: I played a lot with the useEffect in here and with useIsFocused and useNavigation hooks from react navigation. These hooks helped to trigger different
-redux actions based on the redux state also extracted using useSelector hook from redux
+**Thoughts**: I played a lot with the useEffect in here and with **useIsFocused** and **useNavigation** hooks from react navigation. These hooks helped to trigger
+different
+redux actions based on the redux state also extracted using **useSelector** hook from redux
 
 ![Alt text](./app/assets/screenshots/PostsListAndroid.png)
 
