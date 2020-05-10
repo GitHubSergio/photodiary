@@ -405,3 +405,28 @@ it('should navigate to the Sign Up screen', async () => {
       expect(usernameField).toBeTruthy();
     });
 ```
+
+Also to test hooks I implemented [react-hooks-testing-library](https://react-hooks-testing-library.com/), below a couple of tests
+
+```
+describe('useInput', () => {
+    it('should return the text value', () => {
+      const testText = 'new text';
+      const { result } = renderHook(() => useInput(testText));
+      expect(result.current.value).toEqual(testText);
+    });
+
+    it('should update the text value', () => {
+      let initialValue = 'default text';
+      const { result } = renderHook(() => useInput(initialValue));
+
+      initialValue = 'new text';
+
+      act(() => {
+        result.current.onChangeText(initialValue);
+      });
+
+      expect(result.current.value).toEqual('new text');
+    });
+  });
+```
