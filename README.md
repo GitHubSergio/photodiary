@@ -14,12 +14,47 @@ Purpose of this project:
 **LoginScreen**
 
 Simple login form with two TextInputs. It interacts with RNF to verify that a user exists.
-Thoughts: This is the simplest and most basic way to use RNF. I think it works really well for this simple operations. I found that the most important part is to setup solid rules for the DB to ensure that only authenticated users can access their data
 
-There is a base InputField component that accepts props from styles to a customHook “useInput”
+Thoughts: This is the simplest and most basic way to use RNF. I think it works really well for this simple apps. I found that the most important part is to setup solid
+rules for the DB to ensure that only authenticated users can access their data
+
+There is a base InputField component that accepts props, from styles to a customHook “useInput”
+
+```
+const InputField = ({
+  style,
+  placeHolder,
+  inputValue,
+  onSubmitEditing,
+  ...rest
+}) => {
+  return (
+    <TextInput
+      style={[inputFieldStyles.textInput, style]}
+      placeholder={placeHolder}
+      placeholderTextColor="grey"
+      onSubmitEditing={onSubmitEditing}
+      {...inputValue}
+      {...rest}
+    />
+  );
+};
+```
+
+```
+export const useInput = (initialValue = '') => {
+  const [value, setValue] = useState(initialValue);
+  return {
+    value,
+    onChangeText: (text) => setValue(text),
+  };
+};
+```
+
 Thoughts: Nothing really unusual on this it was like creating a base InputField from the <input /> tag in React Web. Nice to implement a custom hooks for value and onChangeText.
 
 This login form is also reused for the signup screen. It renders two additional fields based on the route name extracted with the hook useRoute.
+
 Thoughts: In an official project I would definitely create separate forms. After all the logic for the two forms may change and it would make it harder to manage and test but it was useful to test the **useRoute** hook from the react navigation.
 
 ```
