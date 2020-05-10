@@ -165,7 +165,7 @@ redux actions based on the redux state also extracted using **useSelector** hook
 
 ## PostAddScreen
 
-Here to explore the image picker from the RNCommunity. To select an image I created a custom hook **useImagePicker**
+Here to explore the image picker from the RNCommunity. To select an image I created a custom hook **useImagePicker**.
 
 ```
 export const useImagePicker = () => {
@@ -209,6 +209,43 @@ export const useImagePicker = () => {
 
   return [imageUriDevice, handleChoosePhoto, handleDeletePhoto];
 };
+```
+
+Also set the challenge of creating a keyboard toolbox for Android (InputAccessoryView for iOS).
+To position the KTB on top of the android keyboard I implemented two event listeners **keyboardDidShow** and **keyboardDidHide** in an useEffect hook
+
+```
+useEffect(() => {
+    let keyboardDidShowListener;
+    let keyboardDidHideListener;
+
+    keyboardDidShowListener = Keyboard.addListener(
+      'keyboardDidShow',
+      keyboardDidShow,
+    );
+    keyboardDidHideListener = Keyboard.addListener(
+      'keyboardDidHide',
+      keyboardDidShow,
+    );
+
+    return () => {
+      if (keyboardDidShowListener) {
+        keyboardDidShowListener.remove();
+      }
+      if (keyboardDidHideListener) {
+        keyboardDidHideListener.remove();
+      }
+    };
+  });
+```
+
+and fired a function to grab the keyboard height minus the height of the View creating the toolbox
+
+```
+const keyboardDidShow = (e) => {
+    setToolbarPosition(e.endCoordinates.height - 50);
+    setIsKeyboardOpen(!isKeyboardOpen);
+  };
 ```
 
 Few screens from iOS and Android
