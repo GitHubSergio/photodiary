@@ -317,5 +317,5 @@ Few screens from iOS and Android
 
 I work on a daily basis with jest & enzyme, so the most natural solution was to implement tests with both. As for the enzyme documentation there some limitation for RN
 therefore I looked into other solutions. I explored the react testing library for the web from Kent C. Dodds and found out that there is an implementation for RN and
-based on the same principles [@testing-library/react-native](https://www.native-testing-library.com/). I also found [react-native-testing-library] from (https://callstack
-.com/)
+based on the same principles [@testing-library/react-native](https://www.native-testing-library.com/). I also found [react-native-testing-library](https://callstack
+.com/) from callstack.com
