@@ -315,7 +315,9 @@ Few screens from iOS and Android
 
 ## Testing Libraries
 
-I work on a daily basis with jest & enzyme, so the most natural solution was to implement tests with both. As for the enzyme documentation there some limitation for RN
-therefore I looked into other solutions. I explored the react testing library for the web from Kent C. Dodds and found out that there is an implementation for RN and
-based on the same principles [@testing-library/react-native](https://www.native-testing-library.com/).
-I also found [react-native-testing-library](https://callstack.github.io/react-native-testing-library/) from callstack.com
+I work on a daily basis with jest & enzyme, so the most natural solution was to implement tests with both. As for the enzyme documentation there are some limitation for
+RN therefore I looked into other solutions. I explored the react testing library for the web from Kent C. Dodds and found out that there is an implementation for RN and
+based on the same principles [@testing-library/react-native](https://www.native-testing-library.com/). I also found [react-native-testing-library](https://callstack
+.github.io/react-native-testing-library/) from callstack.com. After having compared the the two library for RN I decided to go for the one from Kent Dodds as I found it
+closer to the principles of the web implementation. Some part of the documentation may need updating e.g. mocking react navigation seems to be referring to V4 but I found
+this article [Testing your react-navigation v5 hooks](https://medium.com/@dariaruckaolszaska/testing-your-react-navigation-5-hooks-b8b8f745e5b6) and used that implementation.
