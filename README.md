@@ -12,7 +12,7 @@ Purpose of this project:
 - During the project I also took on board the challenge to implement InputAccessoryView for Android
 
 I built this app to play with the points in the above list. It started with RN 0.61 and I then upgraded it to RN 0.62.2. Definitely not an app ready for production but
-good project to experiment and explore.
+good project to experiment and explore. Below I listed some highlights that I enjoyed exploring and some personal comments.
 
 ## LoginScreen
 
