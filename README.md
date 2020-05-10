@@ -57,9 +57,6 @@ onChangeText.
 
 This login form is also reused for the signup screen. It renders two additional fields based on the route name extracted with the hook useRoute.
 
-**Thoughts**: In an official project I would definitely create separate forms. After all the logic for the two forms may change and it would make it harder to manage and
-test but it was useful to test the **useRoute** hook from the react navigation.
-
 ```
 ...
 const { name } = useRoute();
@@ -102,15 +99,15 @@ return (
         ...
 ```
 
+**Thoughts**: In an official project I would definitely create separate forms. After all the logic for the two forms may change and it would make it harder to manage and
+test but it was useful to test the **useRoute** hook from the react navigation.
+
 ![Alt text](./app/assets/screenshots/ios-login.png)
 ![Alt text](./app/assets/screenshots/SignUpiOS.png)
 
 ## PostsScreen
 
 This has a very basic usage of the FlatList. I create a button to navigate to the PostAddScreen which uses an absolute position (Twitter like).
-
-**_Thoughts_**: I played a lot with the useEffect in here and with useIsFocused and useNavigation hooks from react navigation. These hooks helped to trigger different
-redux actions based on the redux state also extracted using useSelector hook from redux
 
 ```
   ...
@@ -159,6 +156,9 @@ redux actions based on the redux state also extracted using useSelector hook fro
   ]);
   ...
 ```
+
+**Thoughts**: I played a lot with the useEffect in here and with useIsFocused and useNavigation hooks from react navigation. These hooks helped to trigger different
+redux actions based on the redux state also extracted using useSelector hook from redux
 
 ![Alt text](./app/assets/screenshots/PostsListAndroid.png)
 
