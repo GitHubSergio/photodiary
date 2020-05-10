@@ -11,14 +11,15 @@ Purpose of this project:
 - Use Flipper for debugging
 - During the project I also took on board the challenge to implement InputAccessoryView for Android
 
-**LoginScreen**
+## LoginScreen
 
 Simple login form with two TextInputs. It interacts with RNF to verify that a user exists.
 
-Thoughts: This is the simplest and most basic way to use RNF. I think it works really well for this simple apps. I found that the most important part is to setup solid
+**Thoughts**: This is the simplest and most basic way to use RNF. I think it works really well for this simple apps. I found that the most important part is to setup
+solid
 rules for the DB to ensure that only authenticated users can access their data
 
-There is a base InputField component that accepts props, from styles to a customHook “useInput”
+There is a base InputField component that accepts props, from styles to a customHook “useInput” and secureTextEntry prop.
 
 ```
 const InputField = ({
@@ -51,11 +52,13 @@ export const useInput = (initialValue = '') => {
 };
 ```
 
-Thoughts: Nothing really unusual on this it was like creating a base InputField from the <input /> tag in React Web. Nice to implement a custom hooks for value and onChangeText.
+**Thoughts**: Nothing really unusual on this it was like creating a base InputField from the <input /> tag in React Web. Nice to implement a custom hooks for value and
+onChangeText.
 
 This login form is also reused for the signup screen. It renders two additional fields based on the route name extracted with the hook useRoute.
 
-Thoughts: In an official project I would definitely create separate forms. After all the logic for the two forms may change and it would make it harder to manage and test but it was useful to test the **useRoute** hook from the react navigation.
+**Thoughts**: In an official project I would definitely create separate forms. After all the logic for the two forms may change and it would make it harder to manage and
+test but it was useful to test the **useRoute** hook from the react navigation.
 
 ```
 ...
@@ -102,10 +105,12 @@ return (
 ![Alt text](./app/assets/screenshots/ios-login.png)
 ![Alt text](./app/assets/screenshots/SignUpiOS.png)
 
-**PostsScreen**
+## PostsScreen
 
 This has a very basic usage of the FlatList. I create a button to navigate to the PostAddScreen which uses an absolute position (Twitter like).
-Thoughts: I played a lot with the useEffect in here and with useIsFocused and useNavigation hooks from react navigation. These hooks helped to trigger different redux actions based on the redux state also extracted using useSelector hook from redux
+
+**_Thoughts_**: I played a lot with the useEffect in here and with useIsFocused and useNavigation hooks from react navigation. These hooks helped to trigger different
+redux actions based on the redux state also extracted using useSelector hook from redux
 
 ```
   ...
@@ -157,7 +162,7 @@ Thoughts: I played a lot with the useEffect in here and with useIsFocused and us
 
 ![Alt text](./app/assets/screenshots/PostsListAndroid.png)
 
-**PostAddScreen**
+## PostAddScreen
 
 Here to explore the image picker from the RNCommunity. To select an image I created a custom hook "useImagePicker"
 
@@ -213,7 +218,7 @@ Few screens from iOS and Android
 ![Alt text](./app/assets/screenshots/SelectPhotoiOS.png)
 ![Alt text](./app/assets/screenshots/AddPostWithPhotoiOS.png)
 
-**PostDetailsScreen**
+## PostDetailsScreen
 
 ![Alt text](./app/assets/screenshots/PostDetailsAndroid.png)
 ![Alt text](./app/assets/screenshots/DeletePostAlertAndroid.png)
