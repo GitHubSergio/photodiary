@@ -57,7 +57,7 @@ export const useInput = (initialValue = '') => {
 **Comments**: Nothing really unusual on this it was like creating a base InputField from the <input /> tag in React Web. Nice to implement a custom hooks for the field
 **value** and **onChangeText**.
 
-This login form is also reused for the signup screen. It renders two additional fields based on the route name extracted with the hook useRoute.
+This login form is also reused for the signup screen. It renders two additional fields based on the route name extracted with the hook **useRoute**.
 
 ```
 ...
