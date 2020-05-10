@@ -11,15 +11,17 @@ Purpose of this project:
 - Use Flipper for debugging
 - During the project I also took on board the challenge to implement InputAccessoryView for Android
 
+I built this app to play with the points in the above list. It started with RN 0.61 and I then upgraded it to RN 0.62.2. Definitely not an app ready for production but
+good project to experiment and explore.
+
 ## LoginScreen
 
 Simple login form with two TextInputs. It interacts with RNF to verify that a user exists.
 
-**Thoughts**: This is the simplest and most basic way to use RNF. I think it works really well for this simple apps. I found that the most important part is to setup
-solid
-rules for the DB to ensure that only authenticated users can access their data
+**Comments**: This is the simplest and most basic way to use RNF. I think it works really well for this simple apps. I found that the most important part is to setup
+solid rules for the DB to ensure that only authenticated users can access their data
 
-There is a base InputField component that accepts props, from styles to a customHook **useInput** and secureTextEntry prop.
+There is a base InputField component that accepts props, e.g styles, a customHook **useInput**, secureTextEntry and onSubmitEditing props.
 
 ```
 const InputField = ({
@@ -52,7 +54,7 @@ export const useInput = (initialValue = '') => {
 };
 ```
 
-**Thoughts**: Nothing really unusual on this it was like creating a base InputField from the <input /> tag in React Web. Nice to implement a custom hooks for the field
+**Comments**: Nothing really unusual on this it was like creating a base InputField from the <input /> tag in React Web. Nice to implement a custom hooks for the field
 **value** and **onChangeText**.
 
 This login form is also reused for the signup screen. It renders two additional fields based on the route name extracted with the hook useRoute.
@@ -99,7 +101,7 @@ return (
         ...
 ```
 
-**Thoughts**: In an official project I would definitely create separate forms. After all the logic for the two forms may change and it would make it harder to manage and
+**Comments**: In an official project I would definitely create separate forms. After all the logic for the two forms may change and it would make it harder to manage and
 test but it was useful to test the **useRoute** hook from the react navigation.
 
 ![Alt text](./app/assets/screenshots/ios-login.png)
@@ -107,9 +109,9 @@ test but it was useful to test the **useRoute** hook from the react navigation.
 
 ## PostsScreen
 
-This has a very basic usage of the FlatList. I create a button to navigate to the PostAddScreen which uses an absolute position (Twitter like).
-I used this screen to play with the useEffect hook when navigating back and forth from the screen. E.g. navigating back after creating a new post or
-updating and deleting a post.
+This has a very basic usage of the FlatList with data fetched from firestore. I create a button to navigate to the PostAddScreen which uses an absolute position (Twitter
+like). I used this screen to play with the useEffect hook when navigating back and forth from the screen. E.g. navigating back after creating a new post or updating and
+deleting a post.
 
 ```
   ...
@@ -159,7 +161,7 @@ updating and deleting a post.
   ...
 ```
 
-**Thoughts**: I played a lot with the useEffect in here and with **useIsFocused** and **useNavigation** hooks from react navigation. These hooks helped to trigger
+**Comments**: I played a lot with the useEffect in here and with **useIsFocused** and **useNavigation** hooks from react navigation. These hooks helped to trigger
 different
 redux actions based on the redux state also extracted using **useSelector** hook from redux
 
@@ -214,7 +216,8 @@ export const useImagePicker = () => {
 ```
 
 Also set the challenge of creating a keyboard toolbox for Android (InputAccessoryView for iOS).
-To position the KTB on top of the android keyboard I implemented two event listeners **keyboardDidShow** and **keyboardDidHide** in an useEffect hook
+To position the KTB on top of the android keyboard I implemented two event listeners **keyboardDidShow** and **keyboardDidHide** in an useEffect hook. The new post is
+saved to firestore and the user redirected back to the PostsScreen where the list of posts is fetched again from firestore. Images are saved to the firebase storage.
 
 ```
 useEffect(() => {
@@ -261,7 +264,7 @@ Few screens from iOS and Android
 ## PostDetailsScreen
 
 This screen shows details of the post and a menu with position absolute which opens showing a **X** to delete and an **E** to navigate to the edit screen.
-Nothing overly completed but I used this screen also to play around with hooks when navigating back and forth.
+Nothing overly completed but I used this screen also to play around with hooks when navigating back and forth. The post details are filtered from the PostsScreen list.
 
 ```
 useEffect(() => {
