@@ -165,7 +165,7 @@ redux actions based on the redux state also extracted using **useSelector** hook
 
 ## PostAddScreen
 
-Here to explore the image picker from the RNCommunity. To select an image I created a custom hook "useImagePicker"
+Here to explore the image picker from the RNCommunity. To select an image I created a custom hook **useImagePicker**
 
 ```
 export const useImagePicker = () => {
