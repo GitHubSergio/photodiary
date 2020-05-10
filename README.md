@@ -108,6 +108,8 @@ test but it was useful to test the **useRoute** hook from the react navigation.
 ## PostsScreen
 
 This has a very basic usage of the FlatList. I create a button to navigate to the PostAddScreen which uses an absolute position (Twitter like).
+I used this screen to play with the useEffect hook when navigating back and forth from the screen. E.g. navigating back after creating a new post or
+updating and deleting a post.
 
 ```
   ...
@@ -257,6 +259,52 @@ Few screens from iOS and Android
 ![Alt text](./app/assets/screenshots/AddPostWithPhotoiOS.png)
 
 ## PostDetailsScreen
+
+This screen shows details of the post and a menu with position absolute which opens showing a **X** to delete and an **E** to navigate to the edit screen.
+Nothing overly completed but I used this screen also to play around with hooks when navigating back and forth.
+
+```
+useEffect(() => {
+    if (isFocused) {
+      dispatch(
+        getPostDetails(
+          allPosts.find((post) => post.postId === route.params.postId),
+        ),
+      );
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isFocused]);
+
+  useEffect(() => {
+    if (deletePostSuccess) {
+      navigation.goBack();
+    }
+
+    return () => {
+      dispatch(clearPostsDetails({}));
+    };
+  }, [deletePostSuccess, dispatch, navigation]);
+
+  const handleDeletePost = () => {
+    const { postId } = postDetails;
+    alertFactory('Delete Post', 'Are you sure you want to delete this post?', [
+      {
+        text: 'Cancel',
+      },
+      {
+        text: 'Delete',
+        onPress: () => dispatch(deletePost(postId, postDetails.imageId)),
+      },
+    ]);
+  };
+
+  const handleEditPost = () => {
+    navigation.navigate('UpdatePostDetailsScreen');
+    dispatch(isEditingPost(true));
+  };
+```
+
+Few screens from iOS and Android
 
 ![Alt text](./app/assets/screenshots/PostDetailsAndroid.png)
 ![Alt text](./app/assets/screenshots/DeletePostAlertAndroid.png)
