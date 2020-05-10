@@ -62,7 +62,9 @@ Thoughts: In an official project I would definitely create separate forms. After
 const { name } = useRoute();
 const isSignUpScreen = name === 'SignUpScreen';
 ...
-
+const email = useInput('');
+const password = useInput('');
+...
 return (
     <ScrollView>
       <KeyboardAvoidingView
